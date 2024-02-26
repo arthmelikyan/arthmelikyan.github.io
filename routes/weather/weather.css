@@ -1,0 +1,157 @@
+body{
+	width:99%;
+	background-color:#2B81AC;
+	/*outline:1px solid black;*/
+}
+
+#obshi_diver{
+	width:970px;
+	height:635px;
+	background-color:#3399CC;
+	margin:0 auto;
+}
+#obshie_bloki{
+	width:694px;
+	height:422px;
+	border:3px solid #FFFFFF;
+	margin:0 auto;
+}
+h1{
+	color:#FFFFFF;
+	font:20px verdana;
+	padding-left:135px;
+	padding-top:30px; 
+}
+#nk1{
+	width:25px;
+	height:25px;
+	position:absolute;
+	top:45px;
+}
+p{
+	text-align:center;
+	font:17px verdana;
+	color:#FAF9FA;
+}
+#Tehran{
+	width:346px;
+	height:104px;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:2px solid #FAF9FA;
+	border-left:0;
+	float:left;
+	background-color:#0088CC;
+}
+#Paris{
+	width:172px;
+	height:104px;
+	float:left;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:2px solid #FAF9FA;
+	border-left:0;
+	background-color:#33CBCC;
+}
+#Belgrade{
+	width:172px;
+	height:104px;
+	float:right;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:0;
+	border-left:0;
+	background-color:#986699;
+}
+#Moscow{
+	width:172px;
+	height:104px;
+	float:left;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:2px solid #FAF9FA;
+	border-left:0;
+	background-color:#C34747;
+}
+#Tel_Aviv{
+	width:172px;
+	height:104px;
+	float:left;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:2px solid #FAF9FA;
+	border-left:0;
+	background-color:#302AD7;
+}
+#Yerevan{
+	width:172px;
+	height:104px;
+	float:left;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:2px solid #FAF9FA;
+	border-left:0;
+	background-color:#E2664A;
+}
+#New_York{
+	width:172px;
+	height:104px;
+	float:right;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:0;
+	border-left:0;
+	background-color:#9ACC99;
+	
+}
+#new_delhi{
+	width:172px;
+	height:104px;
+	float:left;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:2px solid #FAF9FA;
+	border-left:0;
+	background-color:#669999;
+}
+#San_Francisco{
+	width:346px;
+	height:104px;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:2px solid #FAF9FA;
+	border-left:0;
+	float:left;
+	background-color:#CC6698;
+}
+#Tokio{
+	width:172px;
+	height:104px;
+	float:right;
+	border-top:0;
+	border-bottom:2px solid #FAF9FA;
+	border-right:0;
+	border-left:0;
+	background-color:#339967;
+}
+#Gyumri{
+	width:694px;
+	height:104px;
+	background-color:#66669A;
+	float:right;
+	
+}
+#nice{
+	color:#FFFFFF;
+	font:12px verdana;
+	padding-left:135px;
+}
+#nkar{
+	width:22px;
+	height:22px;
+}
+#astichan{
+	color:#CCD7C5;
+	font:22px verdana;
+	
+}
