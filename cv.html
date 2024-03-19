@@ -8,22 +8,35 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
-        ul {
-            font-size: 20px;
+        ul, p, li {
+            font-size: 16px;
         }
-        p, li {
-            font-size: 18px;
+
+        .section {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .header-contact {
+            text-align: center;
+        }
+
+        .icon {
+            margin-right: 10px;
         }
     </style>
 </head>
 
 <body class="bg-gray-100">
     <div class="wrapper">
-        <header class="text-center mb-3 bg-blue-500 text-white p-4">
-            <h1 class="text-4xl font-bold mb-7 mt-3">Arthur Melikyan - PHP/Laravel Developer</h1>
-            <p><i class="fa-solid fa-mobile-screen"></i>+374 94-112-182 / +374 44-126-136 <span class="ml-3"><i class="fa-solid fa-envelope"></i> arthmelikyan@gmail.com</span></p>
+        <header class="text-center mb-5 bg-blue-500 text-white p-4">
+            <h1 class="text-4xl font-bold mb-3 mt-3">Arthur Melikyan - PHP/Laravel Developer</h1>
+            <div class="header-contact">
+                <p><i class="fa-solid fa-mobile-screen icon"></i>+374 94-112-182 / +374 44-126-136 <span class="ml-3"><i class="fa-solid fa-envelope icon"></i> arthmelikyan@gmail.com</span></p>
+            </div>
         </header>
-        <div class="container-fluid pt-10 pr-20 pl-20 mx-auto">
+        <div class="container-fluid px-10 mx-auto">
             <h2 class="text-2xl font-bold mb-6 text-blue-600">OBJECTIVE</h2>
             <section class="mb-4">
                 <p class="text-gray-700">
@@ -78,12 +91,12 @@
                                 Reviewed team members' code carefully, giving helpful feedback to maintain quality and follow best practices.
                             </li>
                             <li>
-                                Automated the testing and deployment procedures using CI/CD and GitHub Actions.
+                                Automated testing and deployment with CI/CD and GitHub Actions, improving efficiency and reliability, resulting in a 50% reduction in deployment time.
                             </li>
                         </ul>
                         <p class="font-semibold pt-3">Technologies:</p>
                         <p class="pl-8 pt-3">
-                            PHP/Laravel, Livewire, MySQL, Postgres, Clickhouse, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, External API integration, Large file handling (imports, exports, in-browser processing), Microsoft files viewing integration, Online Payment integrations, REST API integration, Unit tests, Code coverage analysis.
+                            PHP/Laravel, Livewire, MySQL, Postgres, Clickhouse, Redis, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, External API integration, Large file handling (imports, exports, in-browser processing), Microsoft files viewing integration, Online Payment integrations, REST API integration, Unit tests, Code coverage analysis.
                         </p>
                     </div>
                 </div>
@@ -102,7 +115,7 @@
                         </ul>
                         <p class="font-semibold pt-3">Technologies:</p>
                         <p class="pl-8 pt-3">
-                            Laravel framework, JavaScript, CSS, Bank transaction APIs, queued jobs, optimization, Secure data management.
+                            PHP/Laravel, Mysql, Redis, JavaScript, CSS, Bank transaction APIs, queued jobs, optimization, Secure data management.
                         </p>
                     </div>
                 </div>
@@ -120,7 +133,7 @@
                         </ul>
                         <p class="font-semibold pt-3">Technologies:</p>
                         <p class="pl-8 pt-3">
-                            Laravel framework, JavaScript, Multi-tenant applications, Vue.js, jQuery, MySQL, Package development and deployment, Payment system integration, Front-end development, Lottie animation integration (lottie-web, lottie-js).
+                            PHP/Laravel, JavaScript, Multi-tenant applications, Vue.js, jQuery, MySQL, Redis, Package development and deployment, Payment system integration, Front-end development, Lottie animation integration (lottie-web, lottie-js).
                         </p>
                     </div>
                 </div>
@@ -148,7 +161,7 @@
                         </ul>
                         <p class="font-semibold pt-3">Technologies:</p>
                         <p class="pl-8 pt-3">
-                            PHP/Laravel, MySQL, JavaScript, Vue.js, jQuery, Pusher.js, Front-end development, REST API development, External API integrations, real-time communication protocols, data visualization, security best practices.
+                            PHP/Laravel, MySQL, Redis, JavaScript, Vue.js, jQuery, Pusher.js, Front-end development, REST API development, External API integrations, real-time communication protocols, data visualization, security best practices.
                         </p>
                     </div>
                 </div>
@@ -260,7 +273,7 @@
                 <hr>
                 <div class="mb-2">
                     <p class="text-lg font-semibold">2009-2012</p>
-                    <p class="text-gray-700">Gyumri state technical collage (technic)</p>
+                    <p class="text-gray-700">Gyumri state technical college (technic)</p>
                 </div>
                 <hr>
                 <div class="mb-2">
@@ -286,6 +299,7 @@
         </div>
         <hr>
         <footer class="text-center mt-8 bg-blue-500 text-white p-10">
+            &#32;
         </footer>
     </div>
 </body>
