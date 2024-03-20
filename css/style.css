@@ -63,6 +63,12 @@ section h3.section-subheading {
     color: #28209c;
 }
 
+.footer-download {
+    font-size: 90%;
+    line-height: 40px;
+    font-weight: bold;
+}
+
 @media (max-width: 991px) {
     section h2.section-heading {
         font-size: 30px;
@@ -592,11 +598,11 @@ footer ul.quicklinks {
     margin-bottom: 0;
 }
 
-.contacts_logo {
+.contacts-logo {
     float: left;
 }
 
-.contact_info {
+.contact-info {
     font-size: 16px;
     font-weight: 700;
 }
