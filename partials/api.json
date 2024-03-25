@@ -224,5 +224,37 @@
             "title": "Django (basic)",
             "img": "https://arthmelikyan.github.io/img/icons/django.svg"
         }
+    },
+    "companies" : {
+        "1": {
+            "name": "Brain Fors",
+            "logo": "../img/companies/brain_fors.svg",
+            "date_from": "Nov 2018",
+            "date_to": "Mar 2021"
+        },
+        "2": {
+            "name": "Aist Global",
+            "logo": "../img/companies/aist.svg",
+            "date_from": "Mar 2021",
+            "date_to": "Aug 2021"
+        },
+        "3": {
+            "name": "Code Alliance",
+            "logo": "../img/companies/code_alliance.svg",
+            "date_from": "Aug 2021",
+            "date_to": "Nov 2021"
+        },
+        "4": {
+            "name": "Ellite Dev Squad",
+            "logo": "../img/companies/ellite.svg",
+            "date_from": "Nov 2021",
+            "date_to": "Feb 2024"
+        },
+        "5": {
+            "name": "Next",
+            "logo": "../img/companies/question-mark.svg",
+            "date_from": null,
+            "date_to": null
+        }
     }
 }

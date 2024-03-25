@@ -655,22 +655,24 @@ footer ul.quicklinks {
     font-size: 20px;
     font-weight: bold;
 }
-#experience .worked-companies img{
-    padding: 30px;
+#experience .companies-experience img{
+    padding: 16px;
     width: 240px;
     height: 200px
 }
 
-#experience .worked-companies .company-wrap{
+#experience .companies-experience .company-wrap{
     box-sizing: border-box;
     overflow: hidden;
     border-bottom: 4px solid rgb(189, 189, 189, .1);
     border-radius: 20px;
+    margin-bottom: 15px;
 }
-#experience .worked-companies .company-wrap p {
+#experience .companies-experience .company-wrap p {
     font-weight: bold;
+    margin-bottom: 0;
 }
-#experience .worked-companies .company-wrap:hover img, #experience .worked-companies .company-wrap:hover p{
+#experience .companies-experience .company-wrap:hover img, #experience .companies-experience .company-wrap:hover p{
     transform: scale(1.1);
     transition: transform 1.5s ease;
 }
