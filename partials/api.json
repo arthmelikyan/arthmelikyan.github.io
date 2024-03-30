@@ -1,0 +1,260 @@
+{
+    "portfolios": {
+        "1": {
+            "id": "4business",
+            "type": "Online shop",
+            "name": "4business.am",
+            "url": null,
+            "releaseDate": "March 2021",
+            "title": "ONLINE SHOP WITH DELIVERY",
+            "description": "Online shop with delivery system",
+            "technologies": "#HTML, #CSS, #BOOTSTRAP4, #JavaScript, #jQuery, #VueJs, #PHP, #LARAVEL, #GoogleApi",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/4business.jpg",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/4business-full.png"
+        },
+        "2": {
+            "id": "powerinyou",
+            "type": "Youtube blogger website",
+            "name": "mia power in you",
+            "url": null,
+            "releaseDate": "January 2021",
+            "title": "YOUTUBE BLOGGER WEBSITE",
+            "description": "Youtube blogger website with motivational and psychological content.",
+            "technologies": "#HTML, #CSS, #BOOTSTRAP4, #JavaScript, #jQuery, #VueJs, #PHP, #LARAVEL, #Google API, #Youtube API",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/power_new.png",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/power_full_new.png"
+        },
+        "3": {
+            "id": "elaser",
+            "type": "Laser treatment service website",
+            "name": "Elaser London",
+            "url": "https://elaserlondon.com/",
+            "releaseDate": "October 2022",
+            "title": "Elaser London",
+            "description": "Elaser London - professional laser hair removal and skin care services website",
+            "technologies": "#HTML, #CSS, #BOOTSTRAP 5, #JavaScript, #jQuery, #Vite, #Alpine Js, #PHP, #LARAVEL, #Livewire, #Filament",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/laser-london-cover.png",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/laser-london-full.png"
+        },
+        "4": {
+            "id": "landing",
+            "type": "PSD to Html/Laravel",
+            "name": "Landing page with Laravel",
+            "url": null,
+            "releaseDate": "January 2017",
+            "title": "LARAVEL BASED LANDING PAGE",
+            "description": "Simple demo project. It have laravel based admin panel with text editor, CRUD system and contact form.",
+            "technologies": "#HTML, #CSS, #BOOTSTRAP, #JavaScript, #jQuery, #PHP, #LARAVEL, #Swift Mailer",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/arthdev.jpg",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/arthdev-full.jpg"
+        },
+        "5": {
+            "id": "sanremo",
+            "type": "website",
+            "name": "SanremoJunior Armenia",
+            "url": null,
+            "releaseDate": "March 2018",
+            "title": "SAN REMO JUNIOR ARMENIA (BETA)",
+            "description": "This is demo project of SanremoJunior Armenia contest festival website.",
+            "technologies": "#HTML, #CSS, #BOOTSTRAP, #JavaScript, #jQuery, #PHP, #LARAVEL, #SwiftMailer, #AJAX, #Youtube API",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/remo.jpg",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/sanremo-full.jpg"
+        },
+        "6": {
+            "id": "renaissance",
+            "type": "website",
+            "name": "Gyumri renaissance festival",
+            "url": "https://gyumrirenaissance.com",
+            "releaseDate": "February 2018",
+            "title": "GYUMRI RENAISSANCE CONTEST FESTIVAL",
+            "description": "Website of Gyumri Renaissance contest festival.",
+            "technologies": "#HTML, #CSS, #BOOTSTRAP, #JavaScript, #jQuery, #PHP, #LARAVEL, #SwiftMailer, #AJAX, #Youtube API",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/rena.jpg",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/rena-full.jpg"
+        },
+        "7": {
+            "id": "calihigh",
+            "type": "website",
+            "name": "Calihigh",
+            "url": "https://arthmelikyan.github.io/routes/california/",
+            "releaseDate": "March 2020",
+            "title": "CALIHIGH WEBSITE",
+            "description": "CALIHIGH website markup",
+            "technologies": "#HTML, #CSS, #JavaScript, #BOOTSTRAP",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/calihigh.jpg",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/calihigh-full.png"
+        },
+        "8": {
+            "id": "psd1",
+            "type": "website",
+            "name": "PSD to Html",
+            "url": null,
+            "releaseDate": "January 2016",
+            "title": "PSD TO HTML",
+            "description": "PSD TO HTML",
+            "technologies": "#PSD TO HTML, #HTML, #CSS, #BOOTSTRAP, #JavaScript, #jQuery",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/bussines-page-cover.jpg",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/bussines-page.jpg"
+        },
+        "9": {
+            "id": "psd2",
+            "type": "website",
+            "name": "PSD to Html",
+            "url": null,
+            "releaseDate": "January 2016",
+            "title": "CALIHIGH WEBSITE",
+            "description": "CALIHIGH website markup",
+            "technologies": "#PSD TO HTML, #HTML, #CSS, #BOOTSTRAP, #JavaScript",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/dogg-page-cover.jpg",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/bussines-page.jpg"
+        },
+        "10": {
+            "id": "wp-web",
+            "type": "website",
+            "name": "Wordpress blog",
+            "url": null,
+            "releaseDate": "February 2018",
+            "title": "SIMPLE WORDPRESS BLOG",
+            "description": "SIMPLE WORDPRESS BLOG",
+            "technologies": "#WORDPRESS",
+            "coverImage": "https://arthmelikyan.github.io/img/portfolio/wp-blog-cover.jpg",
+            "fullImage": "https://arthmelikyan.github.io/img/portfolio/wp-blog-full.jpg"
+        }
+    },
+    "certificates": {
+        "1": {
+            "id": "college",
+            "img": "https://arthmelikyan.github.io/img/certificates/technic-certificate-big.jpg",
+            "imgCover": "https://arthmelikyan.github.io/img/certificates/technic-certificate-small.jpg",
+            "title" : "Gyumri st. technical collage",
+            "dates": "2009-2012"
+        },
+        "2": {
+            "id": "tech",
+            "img": "https://arthmelikyan.github.io/img/certificates/gitc-big.jpg",
+            "imgCover": "https://arthmelikyan.github.io/img/certificates/gitc-small.jpg",
+            "title" : "Gyumri information technologies center",
+            "dates": "2016-2017"
+        },
+        "3": {
+            "id": "stepic",
+            "img": "https://arthmelikyan.github.io/img/certificates/stepik_py.jpg",
+            "imgCover": "https://arthmelikyan.github.io/img/certificates/stepik_py.jpg",
+            "title" : "Stepik.org Python: basics and using",
+            "dates": "2018"
+        },
+        "4": {
+            "id": "eduonix",
+            "img": "https://arthmelikyan.github.io/img/certificates/redis.jpg",
+            "imgCover": "https://arthmelikyan.github.io/img/certificates/redis.jpg",
+            "title" : "Eduonix.com Redis: From Scratch.",
+            "dates": "2023"
+        }
+    },
+    "skills": {
+        "1": {
+            "title": "HTML 5",
+            "img": "https://arthmelikyan.github.io/img/icons/html.svg"
+        },
+        "2": {
+            "title": "CSS 3",
+            "img": "https://arthmelikyan.github.io/img/icons/css.svg"
+        },
+        "3": {
+            "title": "JavaScript",
+            "img": "https://arthmelikyan.github.io/img/icons/js.svg"
+        },
+        "4": {
+            "title": "jQuery",
+            "img": "https://arthmelikyan.github.io/img/icons/jquery.svg"
+        },
+        "5": {
+            "title": "Bootstrap",
+            "img": "https://arthmelikyan.github.io/img/icons/bootstrap.svg"
+        },
+        "6": {
+            "title": "Materialize",
+            "img": "https://arthmelikyan.github.io/img/icons/materialize-seeklogo.com.svg"
+        },
+        "7": {
+            "title": "VueJs",
+            "img": "https://arthmelikyan.github.io/img/icons/vue.svg"
+        },
+        "8": {
+            "title": "PHP",
+            "img": "https://arthmelikyan.github.io/img/icons/php.svg"
+        },
+        "9": {
+            "title": "Laravel",
+            "img": "https://arthmelikyan.github.io/img/icons/laravel.svg"
+        },
+        "10": {
+            "title": "Livewire",
+            "img": "https://arthmelikyan.github.io/img/icons/livewire.png"
+        },
+        "11": {
+            "title": "Alpine Js",
+            "img": "https://arthmelikyan.github.io/img/icons/alpinejs.svg"
+        },
+        "12": {
+            "title": "MySql",
+            "img": "https://arthmelikyan.github.io/img/icons/mysql..svg"
+        },
+        "13": {
+            "title": "Redis",
+            "img": "https://arthmelikyan.github.io/img/icons/redis.svg"
+        },
+        "14": {
+            "title": "Docker",
+            "img": "https://arthmelikyan.github.io/img/icons/docker.svg"
+        },
+        "15": {
+            "title": "Git",
+            "img": "https://arthmelikyan.github.io/img/icons/git.svg"
+        },
+        "16": {
+            "title": "Linux",
+            "img": "https://arthmelikyan.github.io/img/icons/linux.svg"
+        },
+        "17": {
+            "title": "Python (basic)",
+            "img": "https://arthmelikyan.github.io/img/icons/python.svg"
+        },
+        "18": {
+            "title": "Django (basic)",
+            "img": "https://arthmelikyan.github.io/img/icons/django.svg"
+        }
+    },
+    "companies" : {
+        "1": {
+            "name": "Brain Fors",
+            "logo": "../img/companies/brain_fors.svg",
+            "date_from": "Nov 2018",
+            "date_to": "Mar 2021"
+        },
+        "2": {
+            "name": "Aist Global",
+            "logo": "../img/companies/aist.svg",
+            "date_from": "Mar 2021",
+            "date_to": "Aug 2021"
+        },
+        "3": {
+            "name": "Code Alliance",
+            "logo": "../img/companies/code_alliance.svg",
+            "date_from": "Aug 2021",
+            "date_to": "Nov 2021"
+        },
+        "4": {
+            "name": "Ellite Dev Squad",
+            "logo": "../img/companies/ellite.svg",
+            "date_from": "Nov 2021",
+            "date_to": "Feb 2024"
+        },
+        "5": {
+            "name": "Next",
+            "logo": "../img/companies/question-mark.svg",
+            "date_from": null,
+            "date_to": null
+        }
+    }
+}
