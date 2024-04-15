@@ -174,9 +174,12 @@ function drawExperience(companies) {
 
   for (const c in companies) {
     if (companies[c].date_to && companies[c].date_from) {
-      const start = moment(companies[c].date_from, "MMM YYYY").startOf("month");
-      const end = moment(companies[c].date_to, "MMM YYYY").endOf("month");
+      const end = companies[c].date_to === "Present" ?
+         moment().endOf("month") :
+         moment(companies[c].date_to, "MMMM YYYY").endOf("month");
+      const start = moment(companies[c].date_from, "MMMM YYYY").startOf("month");
       const duration = moment.duration(end.diff(start));
+
       totalYears += duration.years();
       totalMonths += duration.months();
     }

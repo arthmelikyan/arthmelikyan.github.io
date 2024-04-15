@@ -229,32 +229,32 @@
         "1": {
             "name": "Brain Fors",
             "logo": "../img/companies/brain_fors.svg",
-            "date_from": "Nov 2018",
-            "date_to": "Mar 2021"
+            "date_from": "November 2018",
+            "date_to": "March 2021"
         },
         "2": {
             "name": "Aist Global",
             "logo": "../img/companies/aist.svg",
-            "date_from": "Mar 2021",
-            "date_to": "Aug 2021"
+            "date_from": "March 2021",
+            "date_to": "August 2021"
         },
         "3": {
             "name": "Code Alliance",
             "logo": "../img/companies/code_alliance.svg",
-            "date_from": "Aug 2021",
-            "date_to": "Nov 2021"
+            "date_from": "August 2021",
+            "date_to": "November 2021"
         },
         "4": {
-            "name": "Ellite Dev Squad",
+            "name": "Elite Dev Squad",
             "logo": "../img/companies/ellite.svg",
-            "date_from": "Nov 2021",
-            "date_to": "Feb 2024"
+            "date_from": "November 2021",
+            "date_to": "February 2024"
         },
         "5": {
-            "name": "Next",
-            "logo": "../img/companies/question-mark.svg",
-            "date_from": null,
-            "date_to": null
+            "name": "Hyperspace.ai",
+            "logo": "../img/companies/hyperspace.svg",
+            "date_from": "April 2024",
+            "date_to": "Present"
         }
     }
 }
