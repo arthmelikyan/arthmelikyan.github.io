@@ -9,6 +9,8 @@
 
 [facebook](https://www.facebook.com/arthmelikyan/)
 
+[telegram](https://t.me/arthmelikyan)
+
 ## web
 https://arthmelikyan.github.io
 https://arthurmelikyan.github.io
