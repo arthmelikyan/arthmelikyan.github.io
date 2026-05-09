@@ -1,0 +1,33 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+.claude
+tmp
+
+# Auto-generated CV PDF (rebuilt by scripts/generate-cv-pdf.mjs)
+public/Arthur_Melikyan_Laravel_Developer_CV.pdf
+
+# Puppeteer's bundled Chromium cache
+.cache/puppeteer
