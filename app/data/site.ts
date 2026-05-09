@@ -357,7 +357,7 @@ export const cvExperience: CvExperience[] = [
       'Collaborated across services communicating over a NATS message broker for low-latency event distribution.',
     ],
     technologies:
-      'PHP/Hypervel, PostgreSQL, Redis, NATS, microservices, REST API design, payment-system integration, caching strategy.',
+      'PHP/Hypervel, PostgreSQL, Redis, NATS, microservices, REST API design, caching strategy.',
   },
   {
     company: 'Elite Dev Squad',

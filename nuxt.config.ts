@@ -106,7 +106,6 @@ export default defineNuxtConfig({
 
   experimental: {
     payloadExtraction: true,
-    viewTransition: true,
   },
 
   features: {
