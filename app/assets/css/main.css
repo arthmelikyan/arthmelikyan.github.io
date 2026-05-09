@@ -16,7 +16,7 @@
 
   --color-fg: #f4f5f8;
   --color-fg-muted: #a8b0c5;
-  --color-fg-dim: #6c7591;
+  --color-fg-dim: #8b94ad;
 
   --font-sans:
     'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -111,7 +111,7 @@
   --color-border-strong: #2c3553;
   --color-fg: #f4f5f8;
   --color-fg-muted: #a8b0c5;
-  --color-fg-dim: #6c7591;
+  --color-fg-dim: #8b94ad;
 }
 .scheme-dark .bg-surface-2\/60 {
   background-color: color-mix(in oklab, var(--color-surface-2) 60%, transparent);

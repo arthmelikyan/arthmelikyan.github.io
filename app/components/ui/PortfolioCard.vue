@@ -12,7 +12,6 @@ defineEmits<{ open: [] }>()
     <button
       type="button"
       class="block w-full text-left focus:outline-none"
-      :aria-label="`Open details for ${portfolio.name}`"
       @click="$emit('open')"
     >
       <div class="relative aspect-[16/10] overflow-hidden bg-surface-3">
