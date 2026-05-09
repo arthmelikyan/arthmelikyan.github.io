@@ -1,0 +1,248 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-accent: #fed136;
+  --color-accent-bright: #ffdc5e;
+  --color-accent-deep: #c79b00;
+  --color-on-accent: #07090f;
+  --color-shade: #07090f;
+
+  --color-night: #07090f;
+  --color-surface: #0d111c;
+  --color-surface-2: #131827;
+  --color-surface-3: #1b2238;
+  --color-border: #21283d;
+  --color-border-strong: #2c3553;
+
+  --color-fg: #f4f5f8;
+  --color-fg-muted: #a8b0c5;
+  --color-fg-dim: #6c7591;
+
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  --font-display:
+    'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono:
+    ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, Consolas, monospace;
+
+  --container-2xl: 80rem;
+
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.5s ease-out both;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-heartbeat: heartbeat 2s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes heartbeat {
+    0%, 30%, 70%, 100% { transform: scale(1); }
+    5%, 35% { transform: scale(1.25); }
+    20%, 50% { transform: scale(1); }
+    55% { transform: scale(1.2); }
+  }
+}
+
+:where(.light) {
+  --color-night: #fbfaf6;
+  --color-surface: #f3eed9;
+  --color-surface-2: #ffffff;
+  --color-surface-3: #f5efd9;
+  --color-border: #e8e0c4;
+  --color-border-strong: #d3c79c;
+
+  --color-fg: #14161c;
+  --color-fg-muted: #4f5365;
+  --color-fg-dim: #797d8d;
+}
+
+:where(.light) .bg-surface-2\/60,
+:where(.light) .bg-surface-2\/40 {
+  background-color: var(--color-surface-2);
+  box-shadow: 0 1px 2px rgba(20, 22, 28, 0.04), 0 1px 3px rgba(20, 22, 28, 0.04);
+}
+:where(.light) .bg-surface-3\/80 {
+  background-color: var(--color-surface-2);
+  box-shadow: 0 1px 2px rgba(20, 22, 28, 0.04), 0 1px 3px rgba(20, 22, 28, 0.04);
+}
+:where(.light) .bg-surface\/40 {
+  background-color: var(--color-surface);
+}
+
+:where(.light) .text-accent {
+  color: var(--color-accent-deep);
+}
+:where(.light) .heading-accent::after {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-deep),
+    var(--color-accent)
+  );
+}
+
+:where(.light) .pswp {
+  --pswp-bg: #ffffff;
+  --pswp-placeholder-bg: #f3eed9;
+  --pswp-icon-color: #14161c;
+  --pswp-icon-color-secondary: #ffffff;
+}
+
+.scheme-dark {
+  --color-night: #07090f;
+  --color-surface: #0d111c;
+  --color-surface-2: #131827;
+  --color-surface-3: #1b2238;
+  --color-border: #21283d;
+  --color-border-strong: #2c3553;
+  --color-fg: #f4f5f8;
+  --color-fg-muted: #a8b0c5;
+  --color-fg-dim: #6c7591;
+}
+.scheme-dark .bg-surface-2\/60 {
+  background-color: color-mix(in oklab, var(--color-surface-2) 60%, transparent);
+  box-shadow: none;
+}
+.scheme-dark .bg-surface-2\/40 {
+  background-color: color-mix(in oklab, var(--color-surface-2) 40%, transparent);
+  box-shadow: none;
+}
+.scheme-dark .bg-surface-3\/80 {
+  background-color: color-mix(in oklab, var(--color-surface-3) 80%, transparent);
+  box-shadow: none;
+}
+.scheme-dark .bg-surface\/40 {
+  background-color: color-mix(in oklab, var(--color-surface) 40%, transparent);
+}
+.scheme-dark .text-accent {
+  color: var(--color-accent);
+}
+.scheme-dark .heading-accent::after {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    var(--color-accent-bright)
+  );
+}
+
+.logo-chip {
+  background-color: color-mix(in oklab, var(--color-fg) 6%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-fg) 8%, transparent);
+}
+:where(.light) .logo-chip {
+  background-color: transparent;
+  border-color: transparent;
+}
+.scheme-dark .logo-chip {
+  background-color: color-mix(in oklab, var(--color-fg) 6%, transparent);
+  border-color: color-mix(in oklab, var(--color-fg) 8%, transparent);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color-scheme: dark;
+  }
+  html.light {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-night);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: #1a1300;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+    max-width: 80rem;
+  }
+
+  .heading-accent {
+    position: relative;
+    display: inline-block;
+  }
+  .heading-accent::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -0.5rem;
+    width: 3.5rem;
+    height: 3px;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-bright));
+  }
+
+  .glass {
+    background-color: color-mix(in oklab, var(--color-surface) 70%, transparent);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid color-mix(in oklab, var(--color-border) 80%, transparent);
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.pswp {
+  --pswp-bg: #07090f;
+  --pswp-placeholder-bg: #131827;
+  --pswp-icon-color: #f4f5f8;
+  --pswp-icon-color-secondary: #07090f;
+}
