@@ -6,24 +6,35 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
   future: { compatibilityVersion: 4 },
 
-  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  modules: [
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    'nuxt-gtag',
+  ],
+
+  gtag: {
+    id: 'G-1ZKP93WMWD',
+    initCommands: [['config', 'G-1ZKP93WMWD']],
+  },
 
   fonts: {
     families: [
       {
         name: 'Inter',
         provider: 'google',
-        weights: [400, 500, 600, 700, 800],
+        weights: [400, 600, 700],
         styles: ['normal'],
         display: 'swap',
         subsets: ['latin'],
-        preload: true,
+        preload: false,
       },
     ],
     defaults: {
-      preload: true,
+      preload: false,
       fallbacks: {
-        'sans-serif': ['system-ui', 'sans-serif'],
+        'sans-serif': ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
       },
     },
   },
@@ -87,7 +98,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/cv', '/sitemap.xml', '/robots.txt'],
+      routes: ['/', '/cv', '/cv-print', '/sitemap.xml', '/robots.txt'],
       ignore: ['/routes'],
     },
   },
@@ -104,6 +115,7 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true },
     '/cv': { prerender: true },
+    '/cv-print': { prerender: true },
     '/routes/**': { prerender: false },
   },
 

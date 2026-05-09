@@ -17,7 +17,7 @@ export const profile = {
   experienceStartDate: '2018-08-01',
   cvPdf: '/Arthur_Melikyan_Laravel_Developer_CV.pdf',
   bio: [
-    'Highly motivated PHP/Laravel fullstack developer with 5+ years of experience seeking challenging roles where I can contribute to innovative projects.',
+    'Highly motivated PHP/Laravel fullstack developer with {years}+ years of experience seeking challenging roles where I can contribute to innovative projects.',
     'I focus on building high-performing, secure applications by writing well-structured, efficient code, and I stay close to the metal — Linux, Nginx, Redis — when performance demands it.',
   ],
   highlights: [
@@ -30,9 +30,9 @@ export const profile = {
 } as const
 
 export const stats = [
-  { value: 20, suffix: '+', label: 'Projects' },
-  { value: 15, suffix: '+', label: 'Technologies used' },
-  { value: 10, suffix: '+', label: 'Happy clients' },
+  { value: 25, suffix: '+', label: 'Projects' },
+  { value: 20, suffix: '+', label: 'Technologies used' },
+  { value: 15, suffix: '+', label: 'Happy clients' },
   { value: '∞', suffix: '', label: 'Cups of coffee' },
 ] as const
 
@@ -89,6 +89,14 @@ export const companies: Company[] = [
     dateFrom: 'November 2021',
     dateTo: 'February 2024',
     role: 'Laravel Fullstack Developer',
+  },
+  {
+    id: 'lovel-ai',
+    name: 'Lovel AI',
+    logo: '/img/companies/lovel_ai.png',
+    dateFrom: 'January 2026',
+    dateTo: 'April 2026',
+    role: 'Backend Engineer',
   },
   {
     id: 'hyperspace',
@@ -335,7 +343,21 @@ export const cvExperience: CvExperience[] = [
       'Owning end-to-end Laravel features: API design, queue workers, observability and frontend integration.',
     ],
     technologies:
-      'PHP/Laravel, Vue, TypeScript, Redis, Postgres, AWS, Docker, GitHub Actions.',
+      'PHP/Laravel, Vue, TypeScript, Redis, Postgres, Docker, GitHub Actions.',
+  },
+  {
+    company: 'Lovel AI',
+    role: 'Backend Engineer',
+    period: 'Jan. 2026 – Apr. 2026',
+    achievements: [
+      'Implemented new product features and resolved high-impact bugs across a Hypervel-based microservices stack.',
+      'Investigated and fixed payment-flow issues — refunds, webhook retries and idempotency edge cases — affecting live transactions.',
+      'Improved caching strategy and Redis usage, cutting repeated database round-trips for hot read paths.',
+      'Designed and shipped REST API endpoints consumed by internal services and the client-facing application.',
+      'Collaborated across services communicating over a NATS message broker for low-latency event distribution.',
+    ],
+    technologies:
+      'PHP/Hypervel, PostgreSQL, Redis, NATS, microservices, REST API design, payment-system integration, caching strategy.',
   },
   {
     company: 'Elite Dev Squad',
@@ -399,9 +421,9 @@ export const education = [
 ] as const
 
 export const languages = [
-  { id: 'am', name: 'Armenian', flag: 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/am.svg', level: 'Native' },
-  { id: 'en', name: 'English', flag: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg', level: 'Professional' },
-  { id: 'ru', name: 'Russian', flag: 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/ru.svg', level: 'Conversational' },
+  { id: 'am', name: 'Armenian', flag: 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/am.svg' },
+  { id: 'en', name: 'English', flag: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg' },
+  { id: 'ru', name: 'Russian', flag: 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/ru.svg' },
 ] as const
 
 export const hobbies = ['Chess', 'Music', 'Tech news', 'Football'] as const

@@ -8,6 +8,7 @@ import {
   skills,
   socials,
 } from '~/data/site'
+import { useProfileBio } from '~/composables/useProfileBio'
 
 useSeoMeta({
   title: `CV — ${profile.name}`,
@@ -23,6 +24,8 @@ useHead({
   link: [{ rel: 'canonical', href: 'https://arthmelikyan.github.io/cv' }],
 })
 
+const { bio } = useProfileBio()
+
 const linkedIn = computed(
   () => socials.find((s) => s.id === 'linkedin')?.href ?? ''
 )
@@ -36,10 +39,7 @@ const telegram = computed(
   <article class="pt-28 pb-16">
     <div class="container-page max-w-4xl">
       <header class="text-center mb-12 print:mb-6">
-        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-          Curriculum Vitae
-        </p>
-        <h1 class="mt-3 text-4xl md:text-5xl font-bold tracking-tight">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
           {{ profile.name }}
         </h1>
         <p class="mt-2 text-lg text-fg-muted">{{ profile.role }}</p>
@@ -71,13 +71,13 @@ const telegram = computed(
             :href="profile.cvPdf"
             target="_blank"
             rel="noopener"
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-on-accent text-sm font-semibold hover:bg-accent-bright transition-colors"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-on-accent text-sm font-semibold hover:bg-accent-bright transition-colors cursor-pointer"
           >
             Download PDF
           </a>
           <NuxtLink
             to="/"
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-2 text-fg text-sm font-semibold border border-border hover:border-accent/50 transition-colors"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-2 text-fg text-sm font-semibold border border-border hover:border-accent/50 transition-colors cursor-pointer"
           >
             ← Portfolio
           </NuxtLink>
@@ -87,7 +87,7 @@ const telegram = computed(
       <section class="mb-10">
         <h2 class="text-xl font-bold text-accent mb-4">Objective</h2>
         <p
-          v-for="(line, i) in profile.bio"
+          v-for="(line, i) in bio"
           :key="i"
           class="text-fg leading-relaxed mb-3"
         >
@@ -122,9 +122,13 @@ const telegram = computed(
             >
               <li v-for="ach in job.achievements" :key="ach">{{ ach }}</li>
             </ul>
-            <p class="mt-4 text-xs text-fg-dim">
-              <span class="font-semibold text-fg-muted">Tech:</span>
-              {{ job.technologies }}
+            <p class="mt-4 text-xs leading-relaxed text-fg">
+              <span
+                class="font-bold uppercase tracking-wider text-accent text-xs mr-1"
+              >
+                Stack:
+              </span>
+              <span class="font-semibold">{{ job.technologies }}</span>
             </p>
           </li>
         </ol>
@@ -169,7 +173,6 @@ const telegram = computed(
               class="w-8 h-auto rounded-sm"
             />
             <span class="text-fg">{{ lang.name }}</span>
-            <span class="ml-auto text-xs text-fg-muted">{{ lang.level }}</span>
           </li>
         </ul>
       </section>

@@ -26,10 +26,17 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Cache Puppeteer browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('package-lock.json') }}
+          restore-keys: ${{ runner.os }}-puppeteer-
+
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static site
+      - name: Build static site (and regenerate CV PDF)
         run: npm run generate
         env:
           NUXT_PUBLIC_SITE_URL: https://arthmelikyan.github.io

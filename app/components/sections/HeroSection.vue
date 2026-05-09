@@ -16,28 +16,12 @@ const { text, cursor } = useTyping({
     class="relative isolate overflow-hidden min-h-[100svh] flex items-center"
     aria-labelledby="hero-heading"
   >
-    <div class="absolute inset-0 -z-10">
-      <NuxtImg
-        src="/img/cover_head.jpeg"
-        alt=""
-        aria-hidden="true"
-        width="1600"
-        height="900"
-        sizes="100vw"
-        format="webp"
-        quality="40"
-        loading="eager"
-        preload
-        densities="1x"
-        class="w-full h-full object-cover opacity-30"
+    <div class="absolute inset-0 -z-10 bg-night" aria-hidden="true">
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_25%_15%,rgba(254,209,54,0.18),transparent_55%),radial-gradient(circle_at_85%_75%,rgba(254,209,54,0.10),transparent_50%)]"
       />
       <div
-        class="absolute inset-0 bg-gradient-to-b from-night/70 via-night/85 to-night"
-        aria-hidden="true"
-      />
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(254,209,54,0.15),transparent_60%)]"
-        aria-hidden="true"
+        class="absolute inset-0 opacity-[0.04] mix-blend-overlay [background-image:radial-gradient(rgba(255,255,255,0.45)_1px,transparent_1px)] [background-size:3px_3px]"
       />
     </div>
 

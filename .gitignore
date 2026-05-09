@@ -23,5 +23,11 @@ logs
 .env.*
 !.env.example
 
-# Legacy reference (kept locally during migration; remove when confident)
-legacy/
+.claude
+tmp
+
+# Auto-generated CV PDF (rebuilt by scripts/generate-cv-pdf.mjs)
+public/Arthur_Melikyan_Laravel_Developer_CV.pdf
+
+# Puppeteer's bundled Chromium cache
+.cache/puppeteer

@@ -7,6 +7,7 @@ import {
   skills,
   socials,
 } from '~/data/site'
+import { useProfileBio } from '~/composables/useProfileBio'
 import HeroSection from '~/components/sections/HeroSection.vue'
 import SkillsSection from '~/components/sections/SkillsSection.vue'
 import ExperienceSection from '~/components/sections/ExperienceSection.vue'
@@ -14,10 +15,12 @@ import PortfolioSection from '~/components/sections/PortfolioSection.vue'
 import CertificatesSection from '~/components/sections/CertificatesSection.vue'
 import ContactSection from '~/components/sections/ContactSection.vue'
 
+const { yearsLabel } = useProfileBio()
+
 useSeoMeta({
   title: `${profile.name} — ${profile.role}`,
-  description:
-    "Arthur Melikyan's CV, portfolio, skills and contact details. PHP / Laravel fullstack developer with 5+ years of experience building production web apps.",
+  description: () =>
+    `Arthur Melikyan's CV, portfolio, skills and contact details. PHP / Laravel fullstack developer with ${yearsLabel.value} years of experience building production web apps.`,
   ogTitle: `${profile.name} — ${profile.role}`,
   ogDescription:
     'Senior PHP / Laravel fullstack developer — portfolio, experience and CV.',
