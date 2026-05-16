@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {
-  certificates,
+  // certificates,
   companies,
   portfolios,
   profile,
@@ -12,7 +12,7 @@ import HeroSection from '~/components/sections/HeroSection.vue'
 import SkillsSection from '~/components/sections/SkillsSection.vue'
 import ExperienceSection from '~/components/sections/ExperienceSection.vue'
 import PortfolioSection from '~/components/sections/PortfolioSection.vue'
-import CertificatesSection from '~/components/sections/CertificatesSection.vue'
+// import CertificatesSection from '~/components/sections/CertificatesSection.vue'
 import ContactSection from '~/components/sections/ContactSection.vue'
 
 const { yearsLabel } = useProfileBio()
@@ -72,27 +72,27 @@ const portfolioSchema = {
   })),
 }
 
-const certificatesSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  itemListElement: certificates.map((c, i) => ({
-    '@type': 'ListItem',
-    position: i + 1,
-    item: {
-      '@type': 'EducationalOccupationalCredential',
-      name: c.title,
-      dateCreated: c.dates,
-      image: `https://arthmelikyan.github.io${c.full}`,
-    },
-  })),
-}
+// const certificatesSchema = {
+//   '@context': 'https://schema.org',
+//   '@type': 'ItemList',
+//   itemListElement: certificates.map((c, i) => ({
+//     '@type': 'ListItem',
+//     position: i + 1,
+//     item: {
+//       '@type': 'EducationalOccupationalCredential',
+//       name: c.title,
+//       dateCreated: c.dates,
+//       image: `https://arthmelikyan.github.io${c.full}`,
+//     },
+//   })),
+// }
 
 useHead({
   link: [{ rel: 'canonical', href: 'https://arthmelikyan.github.io/' }],
   script: [
     { type: 'application/ld+json', innerHTML: JSON.stringify(personSchema) },
     { type: 'application/ld+json', innerHTML: JSON.stringify(portfolioSchema) },
-    { type: 'application/ld+json', innerHTML: JSON.stringify(certificatesSchema) },
+    // { type: 'application/ld+json', innerHTML: JSON.stringify(certificatesSchema) },
   ],
 })
 </script>
@@ -103,7 +103,7 @@ useHead({
     <SkillsSection />
     <ExperienceSection />
     <PortfolioSection />
-    <CertificatesSection />
+    <!-- <CertificatesSection /> -->
     <ContactSection />
   </article>
 </template>

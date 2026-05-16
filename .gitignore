@@ -31,3 +31,4 @@ public/Arthur_Melikyan_Laravel_Developer_CV.pdf
 
 # Puppeteer's bundled Chromium cache
 .cache/puppeteer
+tmp

@@ -339,11 +339,15 @@ export const cvExperience: CvExperience[] = [
     role: 'Senior Fullstack Engineer',
     period: 'Apr. 2024 – Present',
     achievements: [
-      'Building production AI-augmented web tooling alongside the core platform team.',
-      'Owning end-to-end Laravel features: API design, queue workers, observability and frontend integration.',
+      'Leading the AI integration layer of a generative-AI consumer product — integrated more than a dozen external models (OpenAI, Anthropic Claude, Google Gemini, Mistral, Midjourney, Leonardo, fal.ai, ElevenLabs, Suno and more) behind a uniform interface so the rest of the product does not need to care which model is doing the work.',
+      'Shipping and maintaining the chat and content-generation flows across text, image, audio and voice models — streaming responses, plan-based quotas, multi-model selection and a migration of the legacy chat schema into a new conversations model.',
+      'Introducing fresh API layers across the backend to make the data flow leaner and the app feel faster on both web and mobile.',
+      'Engineering SEO at scale for a high-page-count product — sitemap splitting, feeds and structured-data enrichment.',
+      'Keeping the platform on current versions — recurring PHP and Laravel upgrades, dependency hygiene and queue tuning that quietly moves forward.',
+      'Two-plus years of continuous activity: a few thousand commits and a few hundred merged pull requests across the organisation.',
     ],
     technologies:
-      'PHP/Laravel, Vue, TypeScript, Redis, Postgres, Docker, GitHub Actions.',
+      'PHP/Laravel, Vue, Nuxt, PostgreSQL, Redis, Algolia, Laravel Horizon.',
   },
   {
     company: 'Lovel AI',
