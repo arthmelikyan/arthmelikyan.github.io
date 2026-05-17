@@ -307,7 +307,7 @@ export const socials: SocialLink[] = [
     id: 'github',
     label: 'GitHub',
     href: 'https://github.com/arthmelikyan',
-    icon: '/img/icons/8681331601536080157.svg',
+    icon: '/img/icons/github.svg',
     display: 'github.com/arthmelikyan',
   },
   {
