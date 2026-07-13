@@ -350,10 +350,8 @@ export const cvExperience: CvExperience[] = [
     achievements: [
       'Leading the AI integration layer of a generative-AI consumer product — integrated more than a dozen external models (OpenAI, Anthropic Claude, Google Gemini, Mistral, Midjourney, Leonardo, fal.ai, ElevenLabs, Suno and more) behind a uniform interface so the rest of the product does not need to care which model is doing the work.',
       'Shipping and maintaining the chat and content-generation flows across text, image, audio and voice models — streaming responses, plan-based quotas, multi-model selection and a migration of the legacy chat schema into a new conversations model.',
-      'Cut API response times by 4–5× — profiling and rewriting hot SQL queries, refactoring application code, trimming response payloads and adding targeted caching, plus running the app on Laravel Octane for a persistent high-performance runtime.',
-      'Designed new API layers that streamlined data flow between the backend and the web and mobile clients.',
-      'Engineering SEO at scale for a high-page-count product — sitemap splitting, feeds and structured-data enrichment.',
-      'Keeping the platform current — recurring PHP and Laravel upgrades, dependency hygiene and queue tuning.',
+      'Cut API response times by 4–5× (profiling and rewriting hot SQL queries, refactoring code, trimming response payloads, targeted caching and Laravel Octane) and designed new API layers that streamlined data flow to the web and mobile clients.',
+      'Engineered SEO at scale for a high-page-count product (sitemap splitting, feeds, structured-data enrichment) and kept the platform current with recurring PHP/Laravel upgrades, dependency hygiene and queue tuning.',
     ],
     technologies:
       'PHP/Laravel, Laravel Octane, Vue, Nuxt, PostgreSQL, Redis, Algolia, Laravel Horizon, WebSockets, CI/CD, PM2, PHPUnit.',
@@ -378,13 +376,10 @@ export const cvExperience: CvExperience[] = [
     role: 'Laravel Fullstack Developer',
     period: 'Nov. 2021 – Feb. 2024',
     achievements: [
-      'Worked on a wide variety of projects: company-management software, APIs, online stores, web-scraping tools and dashboards.',
-      'Optimised project performance — reduced memory usage through efficient queries, dynamic content loading and bug fixes.',
-      'Replaced a buggy, unmaintainable legacy codebase with a fully functional, scalable Laravel application.',
-      'Led the development of complex company-management software using a large central repository of Irish businesses.',
-      'Designed key features including task management (with recurring jobs), document management, event management, and automated/manual time tracking with rich visualisations.',
-      'Reviewed teammates’ code carefully to maintain quality and best practices.',
-      'Automated testing and deployment with CI/CD and GitHub Actions, cutting deploy time by 50%.',
+      'Delivered a wide range of projects — company-management software, APIs, online stores, web-scraping tools and dashboards — including replacing a buggy, unmaintainable legacy codebase with a fully functional, scalable Laravel application.',
+      'Led development of complex company-management software over a large central repository of Irish businesses — task management with recurring jobs, document and event management, and automated/manual time tracking with rich visualisations.',
+      'Optimised performance — cut memory usage through efficient queries, dynamic content loading and bug fixes.',
+      'Reviewed teammates’ code to uphold quality and best practices, and automated testing and deployment with CI/CD and GitHub Actions, cutting deploy time by 50%.',
     ],
     technologies:
       'PHP/Laravel, Livewire, MySQL, Postgres, Clickhouse, Redis, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, external API integration, large-file handling, Microsoft files viewing integration, online payment integrations, REST API integration, PHPUnit, Pest, code-coverage analysis.',
@@ -394,8 +389,7 @@ export const cvExperience: CvExperience[] = [
     role: 'Laravel Developer',
     period: 'Aug. 2021 – Nov. 2021',
     achievements: [
-      'Built and managed CRM systems with a focus on easy-to-use dashboards and secure data management.',
-      'Automated large-scale bank-transaction processing using efficient queued jobs and memory optimisation.',
+      'Built and managed CRM systems with easy-to-use dashboards and secure data management, and automated large-scale bank-transaction processing via queued jobs and memory optimisation.',
     ],
     technologies:
       'PHP/Laravel, MySQL, Redis, JavaScript, CSS, bank-transaction APIs, queued jobs, optimisation, secure data management.',
@@ -405,9 +399,8 @@ export const cvExperience: CvExperience[] = [
     role: 'Laravel Fullstack Developer',
     period: 'Mar. 2021 – Aug. 2021',
     achievements: [
-      'Contributed to an online-school platform similar to Udemy with course uploads, online meetings and student interactions.',
-      'Added secure payment systems, created a custom quiz package and published it on Packagist.',
-      'Created a Lottie Animation Marketplace with a friendly dashboard, REST APIs and clear documentation for front-end developers.',
+      'Contributed to a Udemy-like online-school platform (course uploads, online meetings, student interactions) and added secure payment systems.',
+      'Built a Lottie Animation Marketplace with a dashboard, REST APIs and front-end documentation, and published a custom quiz package on Packagist.',
     ],
     technologies:
       'PHP/Laravel, JavaScript, multi-tenant applications, Vue.js, jQuery, MySQL, Redis, package development, payment-system integration, front-end development, Lottie animation integration.',
@@ -417,11 +410,8 @@ export const cvExperience: CvExperience[] = [
     role: 'Laravel Developer',
     period: 'Nov. 2018 – Mar. 2021',
     achievements: [
-      'Developed and launched a high-engagement e-sports platform for gamers, attracting hundreds of active users on release.',
-      'Integrated external APIs (Riot, Valve) for real-time match results, statistics, player positions and ELO-based tournament organisation.',
-      'Implemented robust security measures to ensure data integrity and user privacy.',
-      'Built real-time chat functionality to enhance communication and engagement among gamers.',
-      'Contributed to additional REST APIs for mobile applications and online-shopping platforms.',
+      'Built and launched a high-engagement e-sports platform (hundreds of active users at release), integrating Riot and Valve APIs for real-time match results, statistics, player positions and ELO-based tournament organisation.',
+      'Added real-time chat, robust security for data integrity and user privacy, and REST APIs consumed by mobile applications and online-shopping platforms.',
     ],
     technologies:
       'PHP/Laravel, MySQL, Redis, JavaScript, Vue.js, jQuery, Pusher.js, REST API development, external API integrations, real-time communication protocols, data visualisation, security best practices.',
