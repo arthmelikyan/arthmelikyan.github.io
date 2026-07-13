@@ -32,6 +32,10 @@ useSeoMeta({
   twitterImage: '/img/fbcover.jpg',
 })
 
+useHead({
+  titleTemplate: (title) => title ?? profile.name,
+})
+
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
