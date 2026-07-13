@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import {
-  certificates,
   cvExperience,
   education,
-  hobbies,
   languages,
   profile,
   skills,
@@ -32,10 +30,6 @@ const linkedIn = computed(
   () => socials.find((s) => s.id === 'linkedin')?.href ?? ''
 )
 const github = computed(() => socials.find((s) => s.id === 'github')?.href ?? '')
-
-const cvCerts = certificates.filter((c) =>
-  ['stepik-python', 'eduonix-redis'].includes(c.id)
-)
 const telegram = computed(
   () => socials.find((s) => s.id === 'telegram')?.href ?? ''
 )
@@ -200,25 +194,6 @@ const telegram = computed(
             <span class="text-sm text-fg-muted shrink-0">{{ edu.period }}</span>
           </li>
         </ol>
-      </section>
-
-      <section class="mb-10">
-        <h2 class="text-xl font-bold text-accent mb-4">Certifications</h2>
-        <ol class="space-y-3">
-          <li
-            v-for="cert in cvCerts"
-            :key="cert.id"
-            class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 p-4 rounded-xl bg-surface-2/60 border border-border"
-          >
-            <span class="text-fg">{{ cert.title }}</span>
-            <span class="text-sm text-fg-muted shrink-0">{{ cert.dates }}</span>
-          </li>
-        </ol>
-      </section>
-
-      <section class="mb-10">
-        <h2 class="text-xl font-bold text-accent mb-4">Hobbies</h2>
-        <p class="text-fg-muted">{{ hobbies.join(' · ') }}</p>
       </section>
 
       <section>

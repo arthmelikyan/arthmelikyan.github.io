@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import {
-  certificates,
   cvExperience,
   education,
-  hobbies,
   languages,
   profile,
   skills,
@@ -44,10 +42,6 @@ const groupedSkills = skillGroups
     items: skills.filter((s) => s.group === g.group),
   }))
   .filter((g) => g.items.length > 0)
-
-const cvCerts = certificates.filter((c) =>
-  ['stepik-python', 'eduonix-redis'].includes(c.id)
-)
 </script>
 
 <template>
@@ -105,10 +99,10 @@ const cvCerts = certificates.filter((c) =>
         class="job"
       >
         <header class="job-header">
-          <div>
-            <h3 class="company">{{ job.company }}</h3>
-            <p class="job-role">{{ job.role }}</p>
-          </div>
+          <h3 class="company-line">
+            <span class="company">{{ job.company }}</span>
+            <span class="job-role">— {{ job.role }}</span>
+          </h3>
           <p class="job-period">{{ job.period }}</p>
         </header>
         <ul class="bullets">
@@ -131,35 +125,20 @@ const cvCerts = certificates.filter((c) =>
       </dl>
     </section>
 
-    <section class="section keep-together">
-      <h2>Education</h2>
-      <dl class="edu-list">
-        <template v-for="edu in education" :key="edu.period">
-          <dt>{{ edu.period }}</dt>
-          <dd>{{ edu.name }}</dd>
-        </template>
-      </dl>
-    </section>
-
-    <section class="section keep-together">
-      <h2>Certifications</h2>
-      <dl class="edu-list">
-        <template v-for="cert in cvCerts" :key="cert.id">
-          <dt>{{ cert.dates }}</dt>
-          <dd>{{ cert.title }}</dd>
-        </template>
-      </dl>
-    </section>
-
     <div class="meta-row">
       <section class="section keep-together meta-block">
-        <h2>Languages</h2>
-        <p>{{ languages.map((l) => `${l.name} (${l.level})`).join(' · ') }}</p>
+        <h2>Education</h2>
+        <dl class="edu-list">
+          <template v-for="edu in education" :key="edu.period">
+            <dt>{{ edu.period }}</dt>
+            <dd>{{ edu.name }}</dd>
+          </template>
+        </dl>
       </section>
 
       <section class="section keep-together meta-block">
-        <h2>Hobbies</h2>
-        <p>{{ hobbies.join(' · ') }}</p>
+        <h2>Languages</h2>
+        <p>{{ languages.map((l) => `${l.name} (${l.level})`).join(' · ') }}</p>
       </section>
     </div>
   </div>
@@ -188,9 +167,9 @@ const cvCerts = certificates.filter((c) =>
   background: #ffffff;
   width: 210mm;
   margin: 0 auto;
-  padding: 14mm 18mm;
-  font-size: 10.25pt;
-  line-height: 1.55;
+  padding: 11mm 18mm;
+  font-size: 9.8pt;
+  line-height: 1.46;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   box-sizing: border-box;
@@ -198,11 +177,11 @@ const cvCerts = certificates.filter((c) =>
 
 /* ---------- Header ---------- */
 .cv-header {
-  margin: 0 0 14pt;
+  margin: 0 0 10pt;
 }
 .name {
   margin: 0 0 4pt;
-  font-size: 30pt;
+  font-size: 27pt;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.05;
@@ -244,7 +223,7 @@ const cvCerts = certificates.filter((c) =>
 
 /* ---------- Sections ---------- */
 .section {
-  margin-top: 16pt;
+  margin-top: 11pt;
 }
 .section h2 {
   margin: 0 0 10pt;
@@ -252,7 +231,7 @@ const cvCerts = certificates.filter((c) =>
   font-size: 9.5pt;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: normal;
   color: #b88800;
   border-bottom: 0.6pt solid #e0e2e8;
   break-after: avoid-page;
@@ -273,7 +252,7 @@ const cvCerts = certificates.filter((c) =>
 }
 .bullets li {
   position: relative;
-  margin: 4pt 0;
+  margin: 3pt 0;
   padding-left: 14pt;
   color: #1a1d24;
 }
@@ -290,7 +269,7 @@ const cvCerts = certificates.filter((c) =>
 
 /* ---------- Job blocks ---------- */
 .job {
-  margin-top: 12pt;
+  margin-top: 9pt;
 }
 .job:first-of-type {
   margin-top: 0;
@@ -303,15 +282,17 @@ const cvCerts = certificates.filter((c) =>
   margin: 0 0 4pt;
   break-after: avoid-page;
 }
-.company {
+.company-line {
   margin: 0;
+  font-weight: 400;
+}
+.company {
   font-size: 11.5pt;
   font-weight: 700;
   color: #14161c;
   letter-spacing: -0.01em;
 }
 .job-role {
-  margin: 1pt 0 0;
   font-size: 10pt;
   font-weight: 500;
   color: #4a4f5a;
@@ -327,7 +308,7 @@ const cvCerts = certificates.filter((c) =>
 
 /* ---------- Stack ---------- */
 .tech {
-  margin: 8pt 0 0;
+  margin: 6pt 0 0;
   font-size: 9.5pt;
   color: #4a4f5a;
   line-height: 1.55;
@@ -339,7 +320,7 @@ const cvCerts = certificates.filter((c) =>
   font-size: 7.5pt;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: normal;
   padding: 2pt 6pt;
   border-radius: 3pt;
   margin-right: 6pt;
@@ -372,12 +353,12 @@ const cvCerts = certificates.filter((c) =>
 
 /* ---------- Two-column meta row ---------- */
 .meta-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 18pt;
 }
 .meta-block {
-  margin-top: 16pt;
+  flex: 1 1 0;
+  margin-top: 9pt;
 }
 .meta-block p {
   margin: 0;
@@ -385,7 +366,7 @@ const cvCerts = certificates.filter((c) =>
 }
 
 .keep-together {
-  break-inside: avoid-page;
+  break-inside: auto;
 }
 
 /* ---------- Print ---------- */
