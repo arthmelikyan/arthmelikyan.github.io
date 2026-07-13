@@ -2,6 +2,8 @@
 import { skills } from '~/data/site'
 import SectionHeading from '~/components/ui/SectionHeading.vue'
 import SkillCard from '~/components/ui/SkillCard.vue'
+
+const visibleSkills = skills.filter((s) => !s.cvOnly)
 </script>
 
 <template>
@@ -17,7 +19,7 @@ import SkillCard from '~/components/ui/SkillCard.vue'
         class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
         aria-label="Technical skills"
       >
-        <SkillCard v-for="skill in skills" :key="skill.id" :skill="skill" />
+        <SkillCard v-for="skill in visibleSkills" :key="skill.id" :skill="skill" />
       </ul>
     </div>
   </section>

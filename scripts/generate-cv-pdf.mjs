@@ -8,8 +8,8 @@ const PORT = process.env.CV_PDF_PORT ? Number(process.env.CV_PDF_PORT) : 4321
 const BUILD_DIR = '.output/public'
 const ROUTE = '/cv-print'
 const TARGETS = [
-  '.output/public/Arthur_Melikyan_Laravel_Developer_CV.pdf',
-  'public/Arthur_Melikyan_Laravel_Developer_CV.pdf',
+  '.output/public/Arthur_Melikyan_Senior_PHP_Laravel_Engineer_CV.pdf',
+  'public/Arthur_Melikyan_Senior_PHP_Laravel_Engineer_CV.pdf',
 ]
 
 if (!existsSync(BUILD_DIR)) {
@@ -56,10 +56,8 @@ try {
   console.log(`[cv-pdf] content size: ${width}px × ${height}px`)
 
   const buf = await page.pdf({
-    width: `${Math.ceil(width)}px`,
-    height: `${Math.ceil(height)}px`,
+    format: 'A4',
     printBackground: true,
-    pageRanges: '1',
     margin: { top: 0, right: 0, bottom: 0, left: 0 },
   })
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  certificates,
   cvExperience,
   education,
   hobbies,
@@ -21,6 +22,7 @@ useSeoMeta({
 })
 
 useHead({
+  titleTemplate: (title) => title ?? profile.name,
   link: [{ rel: 'canonical', href: 'https://arthmelikyan.github.io/cv' }],
 })
 
@@ -30,6 +32,10 @@ const linkedIn = computed(
   () => socials.find((s) => s.id === 'linkedin')?.href ?? ''
 )
 const github = computed(() => socials.find((s) => s.id === 'github')?.href ?? '')
+
+const cvCerts = certificates.filter((c) =>
+  ['stepik-python', 'eduonix-redis'].includes(c.id)
+)
 const telegram = computed(
   () => socials.find((s) => s.id === 'telegram')?.href ?? ''
 )
@@ -43,6 +49,7 @@ const telegram = computed(
           {{ profile.name }}
         </h1>
         <p class="mt-2 text-lg text-fg-muted">{{ profile.role }}</p>
+        <p class="mt-1 text-sm font-semibold text-accent">{{ profile.availability }}</p>
 
         <ul
           class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-fg-muted"
@@ -143,6 +150,7 @@ const telegram = computed(
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-2/60 border border-border text-sm text-fg-muted"
           >
             <img
+              v-if="skill.icon"
               :src="skill.icon"
               :alt="`${skill.title} logo`"
               width="18"
@@ -172,7 +180,10 @@ const telegram = computed(
               loading="lazy"
               class="w-8 h-auto rounded-sm"
             />
-            <span class="text-fg">{{ lang.name }}</span>
+            <span class="text-fg"
+              >{{ lang.name }}
+              <span class="text-fg-muted text-sm">· {{ lang.level }}</span></span
+            >
           </li>
         </ul>
       </section>
@@ -187,6 +198,20 @@ const telegram = computed(
           >
             <span class="text-fg">{{ edu.name }}</span>
             <span class="text-sm text-fg-muted shrink-0">{{ edu.period }}</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold text-accent mb-4">Certifications</h2>
+        <ol class="space-y-3">
+          <li
+            v-for="cert in cvCerts"
+            :key="cert.id"
+            class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 p-4 rounded-xl bg-surface-2/60 border border-border"
+          >
+            <span class="text-fg">{{ cert.title }}</span>
+            <span class="text-sm text-fg-muted shrink-0">{{ cert.dates }}</span>
           </li>
         </ol>
       </section>

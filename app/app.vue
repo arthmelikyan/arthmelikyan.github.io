@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  titleTemplate: (title) => (title ? `${title} — Arthur Melikyan` : 'Arthur Melikyan — PHP / Laravel Developer'),
+  titleTemplate: (title) => (title ? `${title} — Arthur Melikyan` : 'Arthur Melikyan — Senior PHP / Laravel Engineer'),
 })
 </script>
 

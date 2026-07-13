@@ -9,19 +9,20 @@ import type {
 
 export const profile = {
   name: 'Arthur Melikyan',
-  role: 'PHP / Laravel Fullstack Developer',
+  role: 'Senior PHP / Laravel Engineer',
   tagline: 'Building reliable, performant Laravel applications since 2018.',
   location: 'Gyumri, Armenia',
+  availability: 'Open to remote & relocation',
   email: 'arthmelikyan@gmail.com',
   phones: ['+374 94-112-182', '+374 44-126-136'],
   experienceStartDate: '2018-08-01',
-  cvPdf: '/Arthur_Melikyan_Laravel_Developer_CV.pdf',
+  cvPdf: '/Arthur_Melikyan_Senior_PHP_Laravel_Engineer_CV.pdf',
   bio: [
-    'Highly motivated PHP/Laravel fullstack developer with {years}+ years of experience seeking challenging roles where I can contribute to innovative projects.',
-    'I focus on building high-performing, secure applications by writing well-structured, efficient code, and I stay close to the metal — Linux, Nginx, Redis — when performance demands it.',
+    'Senior PHP/Laravel engineer with {years}+ years building AI-integration layers, high-throughput APIs and performance-critical backends for consumer-facing products.',
+    'I build high-performing, secure applications with well-structured, efficient code, and tune the full stack — Linux, Nginx, Redis — when performance demands it.',
   ],
   highlights: [
-    'High-performing, secure applications written in well-structured, efficient code.',
+    'Deep experience integrating LLM and generative-AI providers (OpenAI, Anthropic, Google Gemini and more) behind a single unified interface.',
     'Hands-on experience with multiple payment-system integrations and PCI-conscious flows.',
     'Server provisioning and tuning on Linux with Nginx / Apache, Redis and queue workers.',
     'Test-first mindset and SOLID principles for dependable, maintainable code.',
@@ -41,6 +42,7 @@ export const skills: Skill[] = [
   { id: 'css', title: 'CSS 3', icon: '/img/icons/css.svg', group: 'frontend' },
   { id: 'js', title: 'JavaScript', icon: '/img/icons/js.svg', group: 'frontend' },
   { id: 'vue', title: 'Vue.js', icon: '/img/icons/vue.svg', group: 'frontend' },
+  { id: 'nuxt', title: 'Nuxt', icon: '/img/icons/nuxt.svg', group: 'frontend' },
   { id: 'alpine', title: 'Alpine.js', icon: '/img/icons/alpinejs.svg', group: 'frontend' },
   { id: 'bootstrap', title: 'Bootstrap', icon: '/img/icons/bootstrap.svg', group: 'frontend' },
   { id: 'php', title: 'PHP', icon: '/img/icons/php.svg', group: 'backend' },
@@ -49,12 +51,19 @@ export const skills: Skill[] = [
   { id: 'filament', title: 'Filament', icon: '/img/icons/filament.jpg', group: 'backend' },
   { id: 'python', title: 'Python', icon: '/img/icons/python.svg', group: 'language' },
   { id: 'django', title: 'Django', icon: '/img/icons/django.svg', group: 'backend' },
+  { id: 'go', title: 'Go', icon: '/img/icons/go.svg', group: 'backend' },
   { id: 'mysql', title: 'MySQL', icon: '/img/icons/mysql..svg', group: 'database' },
   { id: 'postgres', title: 'PostgreSQL', icon: '/img/icons/postgresql.svg', group: 'database' },
   { id: 'redis', title: 'Redis', icon: '/img/icons/redis.svg', group: 'database' },
   { id: 'docker', title: 'Docker', icon: '/img/icons/docker.svg', group: 'devops' },
   { id: 'git', title: 'Git', icon: '/img/icons/git.svg', group: 'devops' },
   { id: 'linux', title: 'Linux', icon: '/img/icons/linux.svg', group: 'devops' },
+  { id: 'nginx', title: 'Nginx', icon: '/img/icons/nginx.svg', group: 'devops' },
+  { id: 'apache', title: 'Apache', icon: '/img/icons/apache.svg', group: 'devops' },
+  { id: 'gcp', title: 'Google Cloud', group: 'devops', cvOnly: true },
+  { id: 'digitalocean', title: 'DigitalOcean', group: 'devops', cvOnly: true },
+  { id: 'phpunit', title: 'PHPUnit', group: 'testing', cvOnly: true },
+  { id: 'pest', title: 'Pest', group: 'testing', cvOnly: true },
 ]
 
 export const companies: Company[] = [
@@ -96,7 +105,7 @@ export const companies: Company[] = [
     logo: '/img/companies/lovel_ai.png',
     dateFrom: 'January 2026',
     dateTo: 'April 2026',
-    role: 'Backend Engineer',
+    role: 'Backend Engineer · Interim',
   },
   {
     id: 'hyperspace',
@@ -341,20 +350,21 @@ export const cvExperience: CvExperience[] = [
     achievements: [
       'Leading the AI integration layer of a generative-AI consumer product — integrated more than a dozen external models (OpenAI, Anthropic Claude, Google Gemini, Mistral, Midjourney, Leonardo, fal.ai, ElevenLabs, Suno and more) behind a uniform interface so the rest of the product does not need to care which model is doing the work.',
       'Shipping and maintaining the chat and content-generation flows across text, image, audio and voice models — streaming responses, plan-based quotas, multi-model selection and a migration of the legacy chat schema into a new conversations model.',
-      'Introducing fresh API layers across the backend to make the data flow leaner and the app feel faster on both web and mobile.',
+      'Cut API response times by 4–5× — profiling and rewriting hot SQL queries, refactoring application code, trimming response payloads and adding targeted caching, plus running the app on Laravel Octane for a persistent high-performance runtime.',
+      'Designed new API layers that streamlined data flow between the backend and the web and mobile clients.',
       'Engineering SEO at scale for a high-page-count product — sitemap splitting, feeds and structured-data enrichment.',
-      'Keeping the platform on current versions — recurring PHP and Laravel upgrades, dependency hygiene and queue tuning that quietly moves forward.',
-      'Two-plus years of continuous activity: a few thousand commits and a few hundred merged pull requests across the organisation.',
+      'Keeping the platform current — recurring PHP and Laravel upgrades, dependency hygiene and queue tuning.',
     ],
     technologies:
-      'PHP/Laravel, Vue, Nuxt, PostgreSQL, Redis, Algolia, Laravel Horizon.',
+      'PHP/Laravel, Laravel Octane, Vue, Nuxt, PostgreSQL, Redis, Algolia, Laravel Horizon, WebSockets, CI/CD, PM2, PHPUnit.',
   },
   {
     company: 'Lovel AI',
-    role: 'Backend Engineer',
+    role: 'Backend Engineer · Interim (concurrent with Hyperspace.ai)',
     period: 'Jan. 2026 – Apr. 2026',
     achievements: [
-      'Implemented new product features and resolved high-impact bugs across a Hypervel-based microservices stack.',
+      'Interim engagement taken on as primary focus while continuing to support Hyperspace.ai part-time, then returned to Hyperspace.ai full-time.',
+      'Implemented new product features and resolved high-impact bugs across a Hypervel-based stack of 10+ microservices.',
       'Investigated and fixed payment-flow issues — refunds, webhook retries and idempotency edge cases — affecting live transactions.',
       'Improved caching strategy and Redis usage, cutting repeated database round-trips for hot read paths.',
       'Designed and shipped REST API endpoints consumed by internal services and the client-facing application.',
@@ -377,7 +387,7 @@ export const cvExperience: CvExperience[] = [
       'Automated testing and deployment with CI/CD and GitHub Actions, cutting deploy time by 50%.',
     ],
     technologies:
-      'PHP/Laravel, Livewire, MySQL, Postgres, Clickhouse, Redis, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, external API integration, large-file handling, Microsoft files viewing integration, online payment integrations, REST API integration, unit tests, code-coverage analysis.',
+      'PHP/Laravel, Livewire, MySQL, Postgres, Clickhouse, Redis, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, external API integration, large-file handling, Microsoft files viewing integration, online payment integrations, REST API integration, PHPUnit, Pest, code-coverage analysis.',
   },
   {
     company: 'Code Alliance',
@@ -419,15 +429,13 @@ export const cvExperience: CvExperience[] = [
 ]
 
 export const education = [
-  { period: '1999 – 2009', name: 'Gyumri Oyunjyan secondary school' },
-  { period: '2009 – 2012', name: 'Gyumri State Technical College (technic)' },
-  { period: '2016 – 2017', name: 'Gyumri Technology Center (web developer)' },
+  { period: '2016 – 2017', name: 'Gyumri Technology Center — Web Development' },
 ] as const
 
 export const languages = [
-  { id: 'am', name: 'Armenian', flag: 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/am.svg' },
-  { id: 'en', name: 'English', flag: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg' },
-  { id: 'ru', name: 'Russian', flag: 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/ru.svg' },
+  { id: 'am', name: 'Armenian', level: 'Native', flag: 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/am.svg' },
+  { id: 'en', name: 'English', level: 'B2', flag: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg' },
+  { id: 'ru', name: 'Russian', level: 'Fluent', flag: 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/ru.svg' },
 ] as const
 
 export const hobbies = ['Chess', 'Music', 'Tech news', 'Football'] as const

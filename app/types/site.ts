@@ -1,8 +1,9 @@
 export type Skill = {
   id: string
   title: string
-  icon: string
-  group: 'frontend' | 'backend' | 'database' | 'devops' | 'language'
+  icon?: string
+  group: 'frontend' | 'backend' | 'database' | 'devops' | 'language' | 'testing'
+  cvOnly?: boolean
 }
 
 export type Company = {

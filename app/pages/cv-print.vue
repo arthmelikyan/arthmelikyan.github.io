@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  certificates,
   cvExperience,
   education,
   hobbies,
@@ -19,6 +20,7 @@ useSeoMeta({
 
 useHead({
   htmlAttrs: { class: 'cv-print-html' },
+  titleTemplate: (title) => title ?? profile.name,
   link: [{ rel: 'canonical', href: 'https://arthmelikyan.github.io/cv' }],
 })
 
@@ -32,6 +34,7 @@ const skillGroups = [
   { label: 'Backend', group: 'backend' as const },
   { label: 'Data & cache', group: 'database' as const },
   { label: 'DevOps & infra', group: 'devops' as const },
+  { label: 'Testing', group: 'testing' as const },
   { label: 'Other', group: 'language' as const },
 ]
 
@@ -41,6 +44,10 @@ const groupedSkills = skillGroups
     items: skills.filter((s) => s.group === g.group),
   }))
   .filter((g) => g.items.length > 0)
+
+const cvCerts = certificates.filter((c) =>
+  ['stepik-python', 'eduonix-redis'].includes(c.id)
+)
 </script>
 
 <template>
@@ -48,6 +55,7 @@ const groupedSkills = skillGroups
     <header class="cv-header">
       <h1 class="name">{{ profile.name }}</h1>
       <p class="role">{{ profile.role }}</p>
+      <p class="availability">{{ profile.availability }}</p>
       <div class="accent-rule" aria-hidden="true" />
       <p class="contact">
         <a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
@@ -67,6 +75,10 @@ const groupedSkills = skillGroups
         <span class="sep" aria-hidden="true">·</span>
         <a :href="github" target="_blank" rel="noopener">
           github.com/arthmelikyan
+        </a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="https://arthmelikyan.github.io" target="_blank" rel="noopener">
+          arthmelikyan.github.io
         </a>
       </p>
     </header>
@@ -129,10 +141,20 @@ const groupedSkills = skillGroups
       </dl>
     </section>
 
+    <section class="section keep-together">
+      <h2>Certifications</h2>
+      <dl class="edu-list">
+        <template v-for="cert in cvCerts" :key="cert.id">
+          <dt>{{ cert.dates }}</dt>
+          <dd>{{ cert.title }}</dd>
+        </template>
+      </dl>
+    </section>
+
     <div class="meta-row">
       <section class="section keep-together meta-block">
         <h2>Languages</h2>
-        <p>{{ languages.map((l) => l.name).join(' · ') }}</p>
+        <p>{{ languages.map((l) => `${l.name} (${l.level})`).join(' · ') }}</p>
       </section>
 
       <section class="section keep-together meta-block">
@@ -140,22 +162,19 @@ const groupedSkills = skillGroups
         <p>{{ hobbies.join(' · ') }}</p>
       </section>
     </div>
-
-    <p class="web-link no-print">
-      Web version:
-      <a href="https://arthmelikyan.github.io/cv">arthmelikyan.github.io/cv</a>
-    </p>
   </div>
 </template>
 
 <style>
 .cv-print-html,
-.cv-print-html body {
-  background: #f4f5f7 !important;
+.cv-print-html body,
+.cv-print-html #__nuxt {
+  background: #ffffff !important;
   color: #14161c !important;
 }
 
 @page {
+  size: A4;
   margin: 0;
 }
 </style>
@@ -169,7 +188,7 @@ const groupedSkills = skillGroups
   background: #ffffff;
   width: 210mm;
   margin: 0 auto;
-  padding: 18mm 18mm 16mm;
+  padding: 14mm 18mm;
   font-size: 10.25pt;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -190,10 +209,16 @@ const groupedSkills = skillGroups
   color: #14161c;
 }
 .role {
-  margin: 0 0 12pt;
+  margin: 0 0 4pt;
   font-size: 12pt;
   font-weight: 400;
   color: #4a4f5a;
+}
+.availability {
+  margin: 0 0 12pt;
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #b88800;
 }
 .accent-rule {
   width: 44pt;
@@ -266,7 +291,6 @@ const groupedSkills = skillGroups
 /* ---------- Job blocks ---------- */
 .job {
   margin-top: 12pt;
-  break-inside: avoid-page;
 }
 .job:first-of-type {
   margin-top: 0;
@@ -277,6 +301,7 @@ const groupedSkills = skillGroups
   align-items: flex-start;
   gap: 12pt;
   margin: 0 0 4pt;
+  break-after: avoid-page;
 }
 .company {
   margin: 0;
@@ -361,18 +386,6 @@ const groupedSkills = skillGroups
 
 .keep-together {
   break-inside: avoid-page;
-}
-
-/* ---------- Web-only footer ---------- */
-.web-link {
-  margin-top: 18pt;
-  font-size: 9pt;
-  color: #4a4f5a;
-}
-.web-link a {
-  color: #14161c;
-  text-decoration: underline;
-  text-underline-offset: 2pt;
 }
 
 /* ---------- Print ---------- */
