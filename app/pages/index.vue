@@ -2,6 +2,7 @@
 import {
   // certificates,
   companies,
+  languages,
   portfolios,
   profile,
   skills,
@@ -20,10 +21,10 @@ const { yearsLabel } = useProfileBio()
 useSeoMeta({
   title: `${profile.name} — ${profile.role}`,
   description: () =>
-    `Arthur Melikyan's CV, portfolio, skills and contact details. PHP / Laravel fullstack developer with ${yearsLabel.value} years of experience building production web apps.`,
+    `Senior PHP / Laravel engineer in ${profile.location} with ${yearsLabel.value} years building AI integrations, high-performance APIs and Laravel backends. Portfolio, experience, skills and CV.`,
   ogTitle: `${profile.name} — ${profile.role}`,
   ogDescription:
-    'Senior PHP / Laravel fullstack developer — portfolio, experience and CV.',
+    'Senior PHP / Laravel engineer — AI integrations, high-performance APIs and backends. Portfolio, experience and CV.',
   ogType: 'profile',
   ogImage: '/img/fbcover.jpg',
   twitterCard: 'summary_large_image',
@@ -41,11 +42,19 @@ const personSchema = {
   '@type': 'Person',
   name: profile.name,
   jobTitle: profile.role,
+  description: `Senior PHP / Laravel engineer with ${yearsLabel.value} years building AI integrations, high-performance APIs and backends for consumer products.`,
   email: `mailto:${profile.email}`,
   url: 'https://arthmelikyan.github.io/',
   image: 'https://arthmelikyan.github.io/img/fbcover.jpg',
   address: { '@type': 'PostalAddress', addressLocality: profile.location },
   knowsAbout: skills.map((s) => s.title),
+  knowsLanguage: languages.map((l) => l.name),
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'PHP / Laravel Engineer',
+    occupationLocation: { '@type': 'City', name: profile.location },
+    skills: skills.map((s) => s.title).join(', '),
+  },
   worksFor: {
     '@type': 'Organization',
     name: companies[companies.length - 1]?.name,

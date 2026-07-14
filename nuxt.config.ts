@@ -76,6 +76,8 @@ export default defineNuxtConfig({
   sitemap: {
     autoLastmod: true,
     xsl: false,
+    discoverImages: false,
+    exclude: ['/cv-print'],
   },
 
   robots: {

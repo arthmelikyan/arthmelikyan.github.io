@@ -101,7 +101,7 @@ const groupedSkills = skillGroups
         <header class="job-header">
           <h3 class="company-line">
             <span class="company">{{ job.company }}</span>
-            <span class="job-role">— {{ job.role }}</span>
+            <span class="job-role">{{ ' — ' + job.role }}</span>
           </h3>
           <p class="job-period">{{ job.period }}</p>
         </header>
