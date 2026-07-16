@@ -36,7 +36,7 @@ try {
   const page = await browser.newPage()
 
   // A4 width in CSS px (210mm @ 96dpi ≈ 794) — content reflows at print width.
-  await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 })
+  await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 1 })
   await page.emulateMediaType('print')
 
   await page.goto(`http://127.0.0.1:${PORT}${ROUTE}`, {

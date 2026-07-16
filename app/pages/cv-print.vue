@@ -171,7 +171,8 @@ const groupedSkills = skillGroups
   font-size: 9.8pt;
   line-height: 1.46;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  font-kerning: none;
+  font-variant-ligatures: none;
   box-sizing: border-box;
 }
 
