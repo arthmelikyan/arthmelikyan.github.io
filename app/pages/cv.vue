@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  cvCertifications,
   cvExperience,
   education,
   languages,
@@ -26,10 +27,8 @@ useHead({
 
 const { bio } = useProfileBio()
 
-const linkedIn = computed(
-  () => socials.find((s) => s.id === 'linkedin')?.href ?? ''
-)
-const github = computed(() => socials.find((s) => s.id === 'github')?.href ?? '')
+const linkedIn = computed(() => socials.find((s) => s.id === 'linkedin'))
+const github = computed(() => socials.find((s) => s.id === 'github'))
 const telegram = computed(
   () => socials.find((s) => s.id === 'telegram')?.href ?? ''
 )
@@ -196,6 +195,23 @@ const telegram = computed(
         </ol>
       </section>
 
+      <section class="mb-10">
+        <h2 class="text-xl font-bold text-accent mb-4">Certifications</h2>
+        <ol class="space-y-3">
+          <li
+            v-for="cert in cvCertifications"
+            :key="cert.name"
+            class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 p-4 rounded-xl bg-surface-2/60 border border-border"
+          >
+            <span class="text-fg"
+              >{{ cert.name }}
+              <span class="text-fg-muted text-sm">· {{ cert.issuer }}</span></span
+            >
+            <span class="text-sm text-fg-muted shrink-0">{{ cert.year }}</span>
+          </li>
+        </ol>
+      </section>
+
       <section>
         <h2 class="text-xl font-bold text-accent mb-4">Contact</h2>
         <ul class="space-y-2 text-fg-muted text-sm">
@@ -210,21 +226,21 @@ const telegram = computed(
           <li>
             <span class="font-semibold text-fg">LinkedIn:</span>
             <a
-              :href="linkedIn"
+              :href="linkedIn?.href"
               target="_blank"
               rel="noopener"
               class="ml-2 text-accent hover:text-accent-bright"
-              >linkedin.com/in/arthmelikyan</a
+              >{{ linkedIn?.display }}</a
             >
           </li>
           <li>
             <span class="font-semibold text-fg">GitHub:</span>
             <a
-              :href="github"
+              :href="github?.href"
               target="_blank"
               rel="noopener"
               class="ml-2 text-accent hover:text-accent-bright"
-              >github.com/arthmelikyan</a
+              >{{ github?.display }}</a
             >
           </li>
           <li>

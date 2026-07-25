@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  cvCertifications,
   cvExperience,
   education,
   languages,
@@ -24,8 +25,8 @@ useHead({
 
 const { bio } = useProfileBio()
 
-const linkedIn = socials.find((s) => s.id === 'linkedin')?.href ?? ''
-const github = socials.find((s) => s.id === 'github')?.href ?? ''
+const linkedIn = socials.find((s) => s.id === 'linkedin')
+const github = socials.find((s) => s.id === 'github')
 
 const skillGroups = [
   { label: 'Frontend', group: 'frontend' as const },
@@ -53,24 +54,24 @@ const groupedSkills = skillGroups
       <div class="accent-rule" aria-hidden="true" />
       <p class="contact">
         <a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
-        <span class="sep" aria-hidden="true">·</span>
-        <span v-for="(phone, i) in profile.phones" :key="phone">
-          <a :href="`tel:${phone.replace(/\s|-/g, '')}`">{{ phone }}</a
-          ><span v-if="i < profile.phones.length - 1" aria-hidden="true">
-            /
-          </span>
-        </span>
-        <span class="sep" aria-hidden="true">·</span>
-        <span>{{ profile.location }}</span>
-        <span class="sep" aria-hidden="true">·</span>
-        <a :href="linkedIn" target="_blank" rel="noopener">
-          linkedin.com/in/arthmelikyan
-        </a>
-        <span class="sep" aria-hidden="true">·</span>
-        <a :href="github" target="_blank" rel="noopener">
-          github.com/arthmelikyan
-        </a>
-        <span class="sep" aria-hidden="true">·</span>
+        <span class="sep">{{ ' | ' }}</span>
+        <a
+          v-for="phone in profile.phones"
+          :key="phone"
+          :href="`tel:${phone.replace(/\s|-/g, '')}`"
+          >{{ phone }}</a
+        >
+        <span class="sep">{{ ' | ' }}</span>
+        <span class="nowrap">{{ profile.location }}</span>
+        <span class="sep">{{ ' | ' }}</span>
+        <a :href="linkedIn?.href" target="_blank" rel="noopener">{{
+          linkedIn?.display
+        }}</a>
+        <span class="sep">{{ ' | ' }}</span>
+        <a :href="github?.href" target="_blank" rel="noopener">{{
+          github?.display
+        }}</a>
+        <span class="sep">{{ ' | ' }}</span>
         <a href="https://arthmelikyan.github.io" target="_blank" rel="noopener">
           arthmelikyan.github.io
         </a>
@@ -78,7 +79,7 @@ const groupedSkills = skillGroups
     </header>
 
     <section class="section">
-      <h2>Profile</h2>
+      <h2>Professional Summary</h2>
       <p
         v-for="(line, i) in bio"
         :key="i"
@@ -103,44 +104,48 @@ const groupedSkills = skillGroups
             <span class="company">{{ job.company }}</span>
             <span class="job-role">{{ ' — ' + job.role }}</span>
           </h3>
-          <p class="job-period">{{ job.period }}</p>
+          <p class="job-period">{{ job.location }} | {{ job.period }}</p>
         </header>
         <ul class="bullets">
           <li v-for="ach in job.achievements" :key="ach">{{ ach }}</li>
         </ul>
         <p class="tech">
-          <span class="tech-label">Stack</span>
-          <span class="tech-list">{{ job.technologies }}</span>
+          <span class="tech-label">Technologies:</span>
+          {{ job.technologies }}
         </p>
       </article>
     </section>
 
     <section class="section keep-together">
       <h2>Technical Skills</h2>
-      <dl class="skill-groups">
-        <template v-for="g in groupedSkills" :key="g.label">
-          <dt>{{ g.label }}</dt>
-          <dd>{{ g.items.map((s) => s.title).join(' · ') }}</dd>
-        </template>
-      </dl>
+      <p v-for="g in groupedSkills" :key="g.label" class="line">
+        <span class="line-label">{{ g.label }}:</span>
+        {{ g.items.map((s) => s.title).join(', ') }}
+      </p>
     </section>
 
-    <div class="meta-row">
-      <section class="section keep-together meta-block">
-        <h2>Education</h2>
-        <dl class="edu-list">
-          <template v-for="edu in education" :key="edu.period">
-            <dt>{{ edu.period }}</dt>
-            <dd>{{ edu.name }}</dd>
-          </template>
-        </dl>
-      </section>
+    <section class="section keep-together">
+      <h2>Education</h2>
+      <p v-for="edu in education" :key="edu.period" class="line">
+        <span class="line-label">{{ edu.name }}</span
+        >, {{ edu.period }}
+      </p>
+    </section>
 
-      <section class="section keep-together meta-block">
-        <h2>Languages</h2>
-        <p>{{ languages.map((l) => `${l.name} (${l.level})`).join(' · ') }}</p>
-      </section>
-    </div>
+    <section class="section keep-together">
+      <h2>Certifications</h2>
+      <p v-for="cert in cvCertifications" :key="cert.name" class="line">
+        <span class="line-label">{{ cert.name }}</span
+        >, {{ cert.issuer }}, {{ cert.year }}
+      </p>
+    </section>
+
+    <section class="section keep-together">
+      <h2>Languages</h2>
+      <p class="line">
+        {{ languages.map((l) => `${l.name} (${l.level})`).join(', ') }}
+      </p>
+    </section>
   </div>
 </template>
 
@@ -167,9 +172,9 @@ const groupedSkills = skillGroups
   background: #ffffff;
   width: 210mm;
   margin: 0 auto;
-  padding: 11mm 18mm;
+  padding: 10mm 16mm;
   font-size: 9.8pt;
-  line-height: 1.46;
+  line-height: 1.44;
   -webkit-font-smoothing: antialiased;
   font-kerning: none;
   font-variant-ligatures: none;
@@ -198,7 +203,7 @@ const groupedSkills = skillGroups
   margin: 0 0 12pt;
   font-size: 9.5pt;
   font-weight: 600;
-  color: #b88800;
+  color: #14161c;
 }
 .accent-rule {
   width: 44pt;
@@ -213,28 +218,30 @@ const groupedSkills = skillGroups
   color: #4a4f5a;
   line-height: 1.6;
 }
-.contact a {
+.contact a,
+.contact .nowrap {
   color: #14161c;
   text-decoration: none;
+  white-space: nowrap;
 }
 .contact .sep {
-  margin: 0 6pt;
-  color: #c4c8d2;
+  margin: 0 1pt;
+  color: #8c919c;
 }
 
 /* ---------- Sections ---------- */
 .section {
-  margin-top: 11pt;
+  margin-top: 9pt;
 }
 .section h2 {
-  margin: 0 0 10pt;
-  padding: 0 0 4pt;
+  margin: 0 0 8pt;
+  padding: 0 0 3pt;
   font-size: 9.5pt;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: normal;
-  color: #b88800;
-  border-bottom: 0.6pt solid #e0e2e8;
+  color: #14161c;
+  border-bottom: 1.2pt solid #fed136;
   break-after: avoid-page;
 }
 
@@ -253,24 +260,21 @@ const groupedSkills = skillGroups
 }
 .bullets li {
   position: relative;
-  margin: 3pt 0;
-  padding-left: 14pt;
+  margin: 2.5pt 0;
+  padding-left: 12pt;
   color: #1a1d24;
 }
 .bullets li::before {
-  content: '';
+  content: '•';
   position: absolute;
-  left: 2pt;
-  top: 0.55em;
-  width: 5pt;
-  height: 5pt;
-  border-radius: 50%;
-  background: #fed136;
+  left: 1pt;
+  top: 0;
+  color: #14161c;
 }
 
 /* ---------- Job blocks ---------- */
 .job {
-  margin-top: 9pt;
+  margin-top: 7.5pt;
 }
 .job:first-of-type {
   margin-top: 0;
@@ -303,67 +307,34 @@ const groupedSkills = skillGroups
   font-size: 9.5pt;
   font-weight: 600;
   color: #4a4f5a;
-  white-space: nowrap;
+  text-align: right;
   flex-shrink: 0;
 }
 
-/* ---------- Stack ---------- */
+/* ---------- Technologies line ---------- */
 .tech {
-  margin: 6pt 0 0;
+  margin: 5pt 0 0;
   font-size: 9.5pt;
   color: #4a4f5a;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 .tech-label {
-  display: inline-block;
-  background: #fed136;
-  color: #14161c;
-  font-size: 7.5pt;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: normal;
-  padding: 2pt 6pt;
-  border-radius: 3pt;
-  margin-right: 6pt;
-  vertical-align: 2pt;
-}
-.tech-list {
-  display: inline;
+  color: #14161c;
 }
 
-/* ---------- Skills + Education (definition lists) ---------- */
-.skill-groups,
-.edu-list {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 6pt 16pt;
-  margin: 0;
-}
-.skill-groups dt,
-.edu-list dt {
-  font-weight: 700;
-  text-align: right;
-  color: #14161c;
-  font-size: 9.5pt;
-}
-.skill-groups dd,
-.edu-list dd {
-  margin: 0;
+/* ---------- Skills / education / certifications / languages ---------- */
+.line {
+  margin: 0 0 3pt;
   color: #1a1d24;
+  line-height: 1.5;
 }
-
-/* ---------- Two-column meta row ---------- */
-.meta-row {
-  display: flex;
-  gap: 18pt;
+.line:last-child {
+  margin-bottom: 0;
 }
-.meta-block {
-  flex: 1 1 0;
-  margin-top: 9pt;
-}
-.meta-block p {
-  margin: 0;
-  color: #4a4f5a;
+.line-label {
+  font-weight: 700;
+  color: #14161c;
 }
 
 .keep-together {

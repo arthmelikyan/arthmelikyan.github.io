@@ -28,7 +28,7 @@ export type Portfolio = {
   full: string
 }
 
-export type Certificate = {
+export type   Certificate = {
   id: string
   title: string
   dates: string
@@ -49,7 +49,14 @@ export type SocialLink = {
 export type CvExperience = {
   company: string
   role: string
+  location: string
   period: string
   achievements: string[]
   technologies: string
+}
+
+export type CvCertification = {
+  name: string
+  issuer: string
+  year: string
 }

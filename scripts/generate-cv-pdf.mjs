@@ -3,6 +3,7 @@ import { writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { dirname } from 'node:path'
 import sirv from 'sirv'
 import puppeteer from 'puppeteer'
+import { PDFDocument } from 'pdf-lib'
 
 const PORT = process.env.CV_PDF_PORT ? Number(process.env.CV_PDF_PORT) : 4321
 const BUILD_DIR = '.output/public'
@@ -10,6 +11,37 @@ const ROUTE = '/cv-print'
 const TARGETS = [
   '.output/public/Arthur_Melikyan_Senior_PHP_Laravel_Engineer_CV.pdf',
   'public/Arthur_Melikyan_Senior_PHP_Laravel_Engineer_CV.pdf',
+]
+
+const AUTHOR = 'Arthur Melikyan'
+const ROLE = 'Senior PHP / Laravel Engineer'
+const KEYWORDS = [
+  'PHP',
+  'Laravel',
+  'Laravel Octane',
+  'Livewire',
+  'Filament',
+  'Hypervel',
+  'Python',
+  'Django',
+  'Go',
+  'Vue.js',
+  'Nuxt',
+  'JavaScript',
+  'MySQL',
+  'PostgreSQL',
+  'Redis',
+  'Docker',
+  'Linux',
+  'Nginx',
+  'REST API',
+  'Microservices',
+  'CI/CD',
+  'PHPUnit',
+  'Pest',
+  'AI integration',
+  'Backend Engineer',
+  'Full-Stack Engineer',
 ]
 
 if (!existsSync(BUILD_DIR)) {
@@ -55,11 +87,28 @@ try {
   })
   console.log(`[cv-pdf] content size: ${width}px × ${height}px`)
 
-  const buf = await page.pdf({
+  const raw = await page.pdf({
     format: 'A4',
     printBackground: true,
     margin: { top: 0, right: 0, bottom: 0, left: 0 },
   })
+
+  const doc = await PDFDocument.load(raw)
+  doc.setTitle(`${AUTHOR} — ${ROLE}`)
+  doc.setAuthor(AUTHOR)
+  doc.setSubject(`${ROLE} resume — ${AUTHOR}`)
+  doc.setKeywords(KEYWORDS)
+  doc.setCreator(AUTHOR)
+  doc.setProducer(AUTHOR)
+  const buf = Buffer.from(await doc.save())
+
+  const pageCount = doc.getPageCount()
+  console.log(`[cv-pdf] pages: ${pageCount}`)
+  if (pageCount > 2) {
+    console.warn(
+      `[cv-pdf] WARNING: ${pageCount} pages — the CV is meant to fit on 2.`,
+    )
+  }
 
   for (const target of TARGETS) {
     mkdirSync(dirname(target), { recursive: true })

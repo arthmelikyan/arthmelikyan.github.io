@@ -1,6 +1,7 @@
 import type {
   Certificate,
   Company,
+  CvCertification,
   CvExperience,
   Portfolio,
   Skill,
@@ -14,7 +15,7 @@ export const profile = {
   location: 'Gyumri, Armenia',
   availability: 'Open to remote & relocation',
   email: 'arthmelikyan@gmail.com',
-  phones: ['+374 94-112-182', '+374 44-126-136'],
+  phones: ['+374 94 112 182'],
   experienceStartDate: '2018-08-01',
   cvPdf: '/Arthur_Melikyan_Senior_PHP_Laravel_Engineer_CV.pdf',
   bio: [
@@ -25,7 +26,7 @@ export const profile = {
     'Integrated many AI providers (OpenAI, Anthropic, Google Gemini and more) behind one unified interface.',
     'Built multiple payment integrations with PCI-aware flows.',
     'Set up and tuned Linux servers with Nginx / Apache, Redis and queue workers.',
-    'Test-first approach and SOLID principles for reliable, maintainable code.',
+    'Test-driven development (TDD) and SOLID principles for reliable, maintainable code.',
     'Comfortable in Agile/Scrum teams (Jira, Trello, ClickUp).',
   ],
 } as const
@@ -47,6 +48,8 @@ export const skills: Skill[] = [
   { id: 'bootstrap', title: 'Bootstrap', icon: '/img/icons/bootstrap.svg', group: 'frontend' },
   { id: 'php', title: 'PHP', icon: '/img/icons/php.svg', group: 'backend' },
   { id: 'laravel', title: 'Laravel', icon: '/img/icons/laravel.svg', group: 'backend' },
+  { id: 'eloquent', title: 'Eloquent ORM', group: 'backend', cvOnly: true },
+  { id: 'mvc', title: 'MVC', group: 'backend', cvOnly: true },
   { id: 'livewire', title: 'Livewire', icon: '/img/icons/livewire.svg', group: 'backend' },
   { id: 'filament', title: 'Filament', icon: '/img/icons/filament.jpg', group: 'backend' },
   { id: 'python', title: 'Python', icon: '/img/icons/python.svg', group: 'backend' },
@@ -64,6 +67,8 @@ export const skills: Skill[] = [
   { id: 'digitalocean', title: 'DigitalOcean', group: 'devops', cvOnly: true },
   { id: 'phpunit', title: 'PHPUnit', group: 'testing', cvOnly: true },
   { id: 'pest', title: 'Pest', group: 'testing', cvOnly: true },
+  { id: 'unit-testing', title: 'Unit testing', group: 'testing', cvOnly: true },
+  { id: 'tdd', title: 'TDD', group: 'testing', cvOnly: true },
 ]
 
 export const companies: Company[] = [
@@ -81,7 +86,7 @@ export const companies: Company[] = [
     logo: '/img/companies/aist.svg',
     dateFrom: 'March 2021',
     dateTo: 'August 2021',
-    role: 'Laravel Fullstack Developer',
+    role: 'Laravel Full-Stack Developer',
   },
   {
     id: 'code-alliance',
@@ -97,7 +102,7 @@ export const companies: Company[] = [
     logo: '/img/companies/ellite.svg',
     dateFrom: 'November 2021',
     dateTo: 'February 2024',
-    role: 'Laravel Fullstack Developer',
+    role: 'Laravel Full-Stack Developer',
   },
   {
     id: 'lovel-ai',
@@ -105,7 +110,7 @@ export const companies: Company[] = [
     logo: '/img/companies/lovel_ai.png',
     dateFrom: 'January 2026',
     dateTo: 'April 2026',
-    role: 'Backend Engineer · Interim',
+    role: 'Backend Engineer',
   },
   {
     id: 'hyperspace',
@@ -113,7 +118,7 @@ export const companies: Company[] = [
     logo: '/img/companies/hs.webp',
     dateFrom: 'April 2024',
     dateTo: 'Present',
-    role: 'Senior Fullstack Engineer',
+    role: 'Senior Full-Stack Engineer (PHP/Laravel)',
   },
 ]
 
@@ -297,6 +302,12 @@ export const certificates: Certificate[] = [
   },
 ]
 
+const urlLabel = (href: string) =>
+  href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/+$/, '')
+
+const LINKEDIN_URL = 'https://www.linkedin.com/in/arthmelikyan'
+const GITHUB_URL = 'https://github.com/arthmelikyan'
+
 export const socials: SocialLink[] = [
   {
     id: 'email',
@@ -308,16 +319,16 @@ export const socials: SocialLink[] = [
   {
     id: 'linkedin',
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/arthur-melikyan-67a668127/',
+    href: LINKEDIN_URL,
     icon: '/img/icons/Linkedin.svg',
-    display: 'linkedin.com/in/arthmelikyan',
+    display: urlLabel(LINKEDIN_URL),
   },
   {
     id: 'github',
     label: 'GitHub',
-    href: 'https://github.com/arthmelikyan',
+    href: GITHUB_URL,
     icon: '/img/icons/github.svg',
-    display: 'github.com/arthmelikyan',
+    display: urlLabel(GITHUB_URL),
   },
   {
     id: 'telegram',
@@ -345,8 +356,9 @@ export const socials: SocialLink[] = [
 export const cvExperience: CvExperience[] = [
   {
     company: 'Hyperspace.ai',
-    role: 'Senior Fullstack Engineer',
-    period: 'Apr. 2024 – Present',
+    role: 'Senior Full-Stack Engineer (PHP/Laravel)',
+    location: 'Remote',
+    period: 'Apr 2024 - Present',
     achievements: [
       'Lead the AI-integration layer of a generative-AI product — 12+ external models (OpenAI, Anthropic Claude, Google Gemini, Mistral, Midjourney, Leonardo, fal.ai, ElevenLabs, Suno and more) behind one interface, so the rest of the product need not know which model runs.',
       'Build and maintain chat and content-generation flows across text, image, audio and voice — streaming responses, plan-based quotas, multi-model selection, and a migration of the old chat schema to a new conversations model.',
@@ -354,26 +366,28 @@ export const cvExperience: CvExperience[] = [
       'Scale SEO for a large-page product (sitemap splitting, feeds, structured data) and keep the platform current with regular PHP/Laravel upgrades and queue tuning.',
     ],
     technologies:
-      'PHP/Laravel, Laravel Octane, Vue, Nuxt, PostgreSQL, Redis, Algolia, Laravel Horizon, WebSockets, CI/CD, PM2, PHPUnit.',
+      'PHP/Laravel, Laravel Octane, Eloquent ORM, Vue, Nuxt, PostgreSQL, Redis, Algolia, Laravel Horizon, WebSockets, Docker, Linux, Nginx, CI/CD, PM2, PHPUnit, unit testing.',
   },
   {
     company: 'Lovel AI',
-    role: 'Backend Engineer · Interim (concurrent with Hyperspace.ai)',
-    period: 'Jan. 2026 – Apr. 2026',
+    role: 'Backend Engineer',
+    location: 'Remote',
+    period: 'Jan 2026 - Apr 2026',
     achievements: [
-      'Interim role as main focus while still supporting Hyperspace.ai part-time; later returned to Hyperspace.ai full-time.',
+      'Interim engagement held concurrently with Hyperspace.ai, which continued part-time throughout; returned to Hyperspace.ai full-time afterwards.',
       'Built new features and fixed high-impact bugs across a Hypervel stack of 10+ microservices.',
       'Fixed payment-flow issues — refunds, webhook retries and idempotency — affecting live transactions.',
       'Improved caching and Redis usage, cutting repeated database calls on hot read paths.',
       'Built REST API endpoints for internal services and the client app, with services talking over a NATS message broker for low-latency events.',
     ],
     technologies:
-      'PHP/Hypervel, PostgreSQL, Redis, NATS, microservices, REST API design, payment-system integration, caching strategy.',
+      'PHP/Hypervel, PostgreSQL, Redis, NATS, microservices, REST API design, payment-system integration, caching strategy, Docker, Linux, Nginx.',
   },
   {
     company: 'Elite Dev Squad',
-    role: 'Laravel Fullstack Developer',
-    period: 'Nov. 2021 – Feb. 2024',
+    role: 'Laravel Full-Stack Developer',
+    location: 'Yerevan, Armenia (Hybrid)',
+    period: 'Nov 2021 - Feb 2024',
     achievements: [
       'Delivered many projects — company-management software, APIs, online stores, web scrapers and dashboards — including rebuilding a buggy legacy codebase into a scalable Laravel app.',
       'Led a complex company-management app over a large database of Irish businesses — task management with recurring jobs, document and event management, and automated/manual time tracking with charts.',
@@ -381,45 +395,57 @@ export const cvExperience: CvExperience[] = [
       'Reviewed teammates’ code for quality, and automated tests and deploys with CI/CD and GitHub Actions — 50% faster deploys.',
     ],
     technologies:
-      'PHP/Laravel, Livewire, MySQL, Postgres, Clickhouse, Redis, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, external API integration, large-file handling, Microsoft files viewing integration, online payment integrations, REST API integration, PHPUnit, Pest, code-coverage analysis.',
+      'PHP/Laravel, Livewire, MySQL, Postgres, Clickhouse, Redis, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, external API integration, large-file handling, Microsoft files viewing integration, online payment integrations, REST API integration, Docker, Linux, Nginx, PHPUnit, Pest, unit testing, code-coverage analysis.',
   },
   {
     company: 'Code Alliance',
     role: 'Laravel Developer',
-    period: 'Aug. 2021 – Nov. 2021',
+    location: 'Yerevan, Armenia',
+    period: 'Aug 2021 - Nov 2021',
     achievements: [
       'Built and ran CRM systems with easy dashboards and secure data, and automated large-scale bank-transaction processing via queued jobs and memory tuning.',
     ],
     technologies:
-      'PHP/Laravel, MySQL, Redis, JavaScript, CSS, bank-transaction APIs, queued jobs, optimisation, secure data management.',
+      'PHP/Laravel, MySQL, Redis, JavaScript, CSS, bank-transaction APIs, queued jobs, optimization, secure data management, Linux, Nginx.',
   },
   {
     company: 'Aist Global',
-    role: 'Laravel Fullstack Developer',
-    period: 'Mar. 2021 – Aug. 2021',
+    role: 'Laravel Full-Stack Developer',
+    location: 'Yerevan, Armenia',
+    period: 'Mar 2021 - Aug 2021',
     achievements: [
       'Worked on a Udemy-like online-school platform (course uploads, online meetings, student interactions) and added secure payments.',
       'Built a Lottie Animation Marketplace with a dashboard, REST APIs and docs, and published a custom quiz package on Packagist.',
     ],
     technologies:
-      'PHP/Laravel, JavaScript, multi-tenant applications, Vue.js, jQuery, MySQL, Redis, package development, payment-system integration, front-end development, Lottie animation integration.',
+      'PHP/Laravel, JavaScript, multi-tenant applications, Vue.js, jQuery, MySQL, Redis, package development, payment-system integration, front-end development, Lottie animation integration, Linux, Nginx.',
   },
   {
     company: 'Brain Fors',
     role: 'Laravel Developer',
-    period: 'Nov. 2018 – Mar. 2021',
+    location: 'Gyumri, Armenia',
+    period: 'Nov 2018 - Mar 2021',
     achievements: [
       'Built and launched an e-sports platform (hundreds of active users at launch), using Riot and Valve APIs for live match results, stats, player positions and ELO-based tournaments.',
       'Added real-time chat, strong security for data integrity and privacy, and REST APIs for mobile apps and online shops.',
     ],
     technologies:
-      'PHP/Laravel, MySQL, Redis, JavaScript, Vue.js, jQuery, Pusher.js, REST API development, external API integrations, real-time communication protocols, data visualisation, security best practices.',
+      'PHP/Laravel, MySQL, Redis, JavaScript, Vue.js, jQuery, Pusher.js, REST API development, external API integrations, real-time communication protocols, data visualization, security best practices, Linux, Nginx.',
   },
 ]
 
 export const education = [
-  { period: '2016 – 2017', name: 'Gyumri Technology Center — Web Development' },
+  {
+    period: '2016 - 2017',
+    name: 'Gyumri Information Technologies Center (GITC) — Web Development',
+  },
+  { period: '2009 - 2012', name: 'Gyumri State Technical College' },
 ] as const
+
+export const cvCertifications: CvCertification[] = [
+  { name: 'Redis: From Scratch', issuer: 'Eduonix', year: '2023' },
+  { name: 'Python: Basics and Using', issuer: 'Stepik', year: '2018' },
+]
 
 export const languages = [
   { id: 'am', name: 'Armenian', level: 'Native', flag: 'https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/am.svg' },

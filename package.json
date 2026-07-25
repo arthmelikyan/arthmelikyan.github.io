@@ -25,6 +25,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
     "@types/node": "^22.0.0",
+    "pdf-lib": "^1.17.1",
     "puppeteer": "^24.15.0",
     "sirv": "^3.0.0",
     "tailwindcss": "^4.0.0",
