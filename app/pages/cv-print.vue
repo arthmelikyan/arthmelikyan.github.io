@@ -106,6 +106,7 @@ const groupedSkills = skillGroups
           </h3>
           <p class="job-period">{{ job.location }} | {{ job.period }}</p>
         </header>
+        <p v-if="job.context" class="job-context">{{ job.context }}</p>
         <ul class="bullets">
           <li v-for="ach in job.achievements" :key="ach">{{ ach }}</li>
         </ul>
@@ -300,6 +301,13 @@ const groupedSkills = skillGroups
 .job-role {
   font-size: 10pt;
   font-weight: 500;
+  color: #4a4f5a;
+}
+.job-context {
+  margin: 0 0 3pt;
+  padding-left: 6pt;
+  border-left: 1.5pt solid #fed136;
+  font-style: italic;
   color: #4a4f5a;
 }
 .job-period {

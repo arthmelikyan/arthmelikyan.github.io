@@ -117,6 +117,12 @@ const telegram = computed(
               </p>
               <p class="text-sm text-fg-muted shrink-0">{{ job.period }}</p>
             </header>
+            <p
+              v-if="job.context"
+              class="mb-3 pl-3 border-l-2 border-accent text-sm italic text-fg-muted"
+            >
+              {{ job.context }}
+            </p>
             <ul
               class="space-y-2 list-disc pl-5 marker:text-accent text-fg-muted text-sm leading-relaxed"
             >

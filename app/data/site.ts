@@ -23,11 +23,11 @@ export const profile = {
     'I write clean, secure, efficient code and tune the full stack — Linux, Nginx, Redis — when performance matters.',
   ],
   highlights: [
-    'Integrated many AI providers (OpenAI, Anthropic, Google Gemini and more) behind one unified interface.',
+    'Integrated 12+ AI models (OpenAI, Anthropic, Google Gemini and more) behind one unified interface.',
     'Built multiple payment integrations with PCI-aware flows.',
     'Set up and tuned Linux servers with Nginx / Apache, Redis and queue workers.',
     'Test-driven development (TDD) and SOLID principles for reliable, maintainable code.',
-    'Comfortable in Agile/Scrum teams (Jira, Trello, ClickUp).',
+    'Deliver in Agile/Scrum teams (Jira, Trello, ClickUp).',
   ],
 } as const
 
@@ -111,6 +111,7 @@ export const companies: Company[] = [
     dateFrom: 'January 2026',
     dateTo: 'April 2026',
     role: 'Backend Engineer',
+    note: 'Concurrent fixed-term assignment at a company affiliated with Hyperspace.ai. My Hyperspace.ai role continued uninterrupted throughout, so these dates overlap by design.',
   },
   {
     id: 'hyperspace',
@@ -373,8 +374,9 @@ export const cvExperience: CvExperience[] = [
     role: 'Backend Engineer',
     location: 'Remote',
     period: 'Jan 2026 - Apr 2026',
+    context:
+      'Concurrent fixed-term assignment at a company affiliated with Hyperspace.ai; the Hyperspace.ai role continued uninterrupted throughout.',
     achievements: [
-      'Interim engagement held concurrently with Hyperspace.ai, which continued part-time throughout; returned to Hyperspace.ai full-time afterwards.',
       'Built new features and fixed high-impact bugs across a Hypervel stack of 10+ microservices.',
       'Fixed payment-flow issues — refunds, webhook retries and idempotency — affecting live transactions.',
       'Improved caching and Redis usage, cutting repeated database calls on hot read paths.',
@@ -389,13 +391,13 @@ export const cvExperience: CvExperience[] = [
     location: 'Yerevan, Armenia (Hybrid)',
     period: 'Nov 2021 - Feb 2024',
     achievements: [
-      'Delivered many projects — company-management software, APIs, online stores, web scrapers and dashboards — including rebuilding a buggy legacy codebase into a scalable Laravel app.',
+      'Delivered company-management software, APIs, online stores, web scrapers and dashboards — including rebuilding a buggy legacy codebase into a scalable Laravel app.',
       'Led a complex company-management app over a large database of Irish businesses — task management with recurring jobs, document and event management, and automated/manual time tracking with charts.',
       'Improved performance — lower memory use through efficient queries, dynamic loading and bug fixes.',
       'Reviewed teammates’ code for quality, and automated tests and deploys with CI/CD and GitHub Actions — 50% faster deploys.',
     ],
     technologies:
-      'PHP/Laravel, Livewire, MySQL, Postgres, Clickhouse, Redis, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, external API integration, large-file handling, Microsoft files viewing integration, online payment integrations, REST API integration, Docker, Linux, Nginx, PHPUnit, Pest, unit testing, code-coverage analysis.',
+      'PHP/Laravel, Livewire, MySQL, PostgreSQL, Clickhouse, Redis, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, external API integration, large-file handling, Microsoft files viewing integration, online payment integrations, REST API integration, Docker, Linux, Nginx, PHPUnit, Pest, unit testing, code coverage analysis.',
   },
   {
     company: 'Code Alliance',
@@ -403,7 +405,7 @@ export const cvExperience: CvExperience[] = [
     location: 'Yerevan, Armenia',
     period: 'Aug 2021 - Nov 2021',
     achievements: [
-      'Built and ran CRM systems with easy dashboards and secure data, and automated large-scale bank-transaction processing via queued jobs and memory tuning.',
+      'Built and ran CRM systems with easy dashboards and secure data, and automated large-scale bank transaction processing via queued jobs and memory tuning.',
     ],
     technologies:
       'PHP/Laravel, MySQL, Redis, JavaScript, CSS, bank-transaction APIs, queued jobs, optimization, secure data management, Linux, Nginx.',
@@ -414,7 +416,7 @@ export const cvExperience: CvExperience[] = [
     location: 'Yerevan, Armenia',
     period: 'Mar 2021 - Aug 2021',
     achievements: [
-      'Worked on a Udemy-like online-school platform (course uploads, online meetings, student interactions) and added secure payments.',
+      'Developed a Udemy-like online-school platform — course uploads, online meetings, student interactions — and added secure payments.',
       'Built a Lottie Animation Marketplace with a dashboard, REST APIs and docs, and published a custom quiz package on Packagist.',
     ],
     technologies:

@@ -13,6 +13,7 @@ export type Company = {
   dateFrom: string
   dateTo: string | 'Present'
   role?: string
+  note?: string
 }
 
 export type Portfolio = {
@@ -51,6 +52,7 @@ export type CvExperience = {
   role: string
   location: string
   period: string
+  context?: string
   achievements: string[]
   technologies: string
 }
