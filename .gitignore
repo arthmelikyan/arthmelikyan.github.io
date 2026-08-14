@@ -28,7 +28,9 @@ tmp
 
 # Auto-generated CV PDF (rebuilt by scripts/generate-cv-pdf.mjs)
 public/Arthur_Melikyan_Senior_PHP_Laravel_Engineer_CV.pdf
+public/Arthur_Melikyan_Cover_Letter.pdf
 
 # Puppeteer's bundled Chromium cache
 .cache/puppeteer
 tmp
+*:Zone.Identifier
