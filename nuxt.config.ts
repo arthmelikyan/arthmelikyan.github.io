@@ -77,7 +77,7 @@ export default defineNuxtConfig({
     autoLastmod: true,
     xsl: false,
     discoverImages: false,
-    exclude: ['/cv-print'],
+    exclude: ['/cv-print', '/cover-letter-print'],
   },
 
   robots: {
@@ -101,7 +101,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/cv', '/cv-print', '/sitemap.xml', '/robots.txt'],
+      routes: ['/', '/cv', '/cv-print', '/cover-letter-print', '/sitemap.xml', '/robots.txt'],
       ignore: ['/routes'],
     },
   },
@@ -118,6 +118,7 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/cv': { prerender: true },
     '/cv-print': { prerender: true },
+    '/cover-letter-print': { prerender: true },
     '/routes/**': { prerender: false },
   },
 

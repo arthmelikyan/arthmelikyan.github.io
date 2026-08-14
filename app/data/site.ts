@@ -118,7 +118,7 @@ export const companies: Company[] = [
     name: 'Hyperspace.ai',
     logo: '/img/companies/hs.webp',
     dateFrom: 'April 2024',
-    dateTo: 'Present',
+    dateTo: 'July 12, 2026',
     role: 'Senior Full-Stack Engineer (PHP/Laravel)',
   },
 ]
@@ -359,7 +359,7 @@ export const cvExperience: CvExperience[] = [
     company: 'Hyperspace.ai',
     role: 'Senior Full-Stack Engineer (PHP/Laravel)',
     location: 'Remote',
-    period: 'Apr 2024 - Present',
+    period: 'Apr 2024 - Jul 12, 2026',
     achievements: [
       'Lead the AI-integration layer of a generative-AI product — 12+ external models (OpenAI, Anthropic Claude, Google Gemini, Mistral, Midjourney, Leonardo, fal.ai, ElevenLabs, Suno and more) behind one interface, so the rest of the product need not know which model runs.',
       'Build and maintain chat and content-generation flows across text, image, audio and voice — streaming responses, plan-based quotas, multi-model selection, and a migration of the old chat schema to a new conversations model.',

@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt generate && npm run generate:pdf",
     "dev": "nuxt dev",
-    "generate": "nuxt generate && npm run generate:pdf",
+    "generate": "npm run build",
     "generate:pdf": "node scripts/generate-cv-pdf.mjs",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
