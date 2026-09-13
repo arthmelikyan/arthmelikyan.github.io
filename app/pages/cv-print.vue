@@ -29,10 +29,11 @@ const linkedIn = socials.find((s) => s.id === 'linkedin')
 const github = socials.find((s) => s.id === 'github')
 
 const skillGroups = [
-  { label: 'Frontend', group: 'frontend' as const },
   { label: 'Backend', group: 'backend' as const },
-  { label: 'Data & cache', group: 'database' as const },
-  { label: 'DevOps & infra', group: 'devops' as const },
+  { label: 'Frontend', group: 'frontend' as const },
+  { label: 'Data, cache & search', group: 'database' as const },
+  { label: 'Cloud, DevOps & infra', group: 'devops' as const },
+  { label: 'Architecture & practices', group: 'architecture' as const },
   { label: 'Testing', group: 'testing' as const },
   { label: 'Other', group: 'language' as const },
 ]
@@ -232,10 +233,10 @@ const groupedSkills = skillGroups
 
 /* ---------- Sections ---------- */
 .section {
-  margin-top: 9pt;
+  margin-top: 8pt;
 }
 .section h2 {
-  margin: 0 0 8pt;
+  margin: 0 0 7pt;
   padding: 0 0 3pt;
   font-size: 9.5pt;
   font-weight: 700;
@@ -333,7 +334,7 @@ const groupedSkills = skillGroups
 
 /* ---------- Skills / education / certifications / languages ---------- */
 .line {
-  margin: 0 0 3pt;
+  margin: 0 0 2.5pt;
   color: #1a1d24;
   line-height: 1.5;
 }

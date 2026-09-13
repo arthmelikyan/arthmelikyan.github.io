@@ -27,6 +27,20 @@ useHead({
 
 const { bio } = useProfileBio()
 
+const skillGroups = [
+  { label: 'Backend', group: 'backend' as const },
+  { label: 'Frontend', group: 'frontend' as const },
+  { label: 'Data, cache & search', group: 'database' as const },
+  { label: 'Cloud, DevOps & infra', group: 'devops' as const },
+  { label: 'Architecture & practices', group: 'architecture' as const },
+  { label: 'Testing', group: 'testing' as const },
+  { label: 'Other', group: 'language' as const },
+]
+
+const groupedSkills = skillGroups
+  .map((g) => ({ label: g.label, items: skills.filter((s) => s.group === g.group) }))
+  .filter((g) => g.items.length > 0)
+
 const linkedIn = computed(() => socials.find((s) => s.id === 'linkedin'))
 const github = computed(() => socials.find((s) => s.id === 'github'))
 const telegram = computed(
@@ -142,25 +156,34 @@ const telegram = computed(
 
       <section class="mb-10">
         <h2 class="text-xl font-bold text-accent mb-4">Technical skills</h2>
-        <ul class="flex flex-wrap gap-2">
-          <li
-            v-for="skill in skills"
-            :key="skill.id"
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-2/60 border border-border text-sm text-fg-muted"
-          >
-            <img
-              v-if="skill.icon"
-              :src="skill.icon"
-              :alt="`${skill.title} logo`"
-              width="18"
-              height="18"
-              loading="lazy"
-              decoding="async"
-              class="w-4 h-4"
-            />
-            {{ skill.title }}
-          </li>
-        </ul>
+        <div class="space-y-5">
+          <div v-for="group in groupedSkills" :key="group.label">
+            <h3
+              class="mb-2 text-xs font-bold uppercase tracking-wider text-fg-muted"
+            >
+              {{ group.label }}
+            </h3>
+            <ul class="flex flex-wrap gap-2">
+              <li
+                v-for="skill in group.items"
+                :key="skill.id"
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-2/60 border border-border text-sm text-fg-muted"
+              >
+                <img
+                  v-if="skill.icon"
+                  :src="skill.icon"
+                  :alt="`${skill.title} logo`"
+                  width="18"
+                  height="18"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-4 h-4"
+                />
+                {{ skill.title }}
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section class="mb-10">

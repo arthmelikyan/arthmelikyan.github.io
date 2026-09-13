@@ -2,7 +2,14 @@ export type Skill = {
   id: string
   title: string
   icon?: string
-  group: 'frontend' | 'backend' | 'database' | 'devops' | 'language' | 'testing'
+  group:
+    | 'frontend'
+    | 'backend'
+    | 'database'
+    | 'devops'
+    | 'testing'
+    | 'architecture'
+    | 'language'
   cvOnly?: boolean
 }
 

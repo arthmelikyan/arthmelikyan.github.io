@@ -7,9 +7,13 @@ const MONTH_NAMES = [
 
 export function parseMonthYear(label: string): Date {
   if (label === 'Present') return new Date()
-  const [month = '', year = ''] = label.split(' ')
-  const m = MONTH_NAMES.indexOf(month)
-  return new Date(parseInt(year, 10), m < 0 ? 0 : m, 1)
+  const match = label.match(/^([A-Za-z]+)\b.*?(\d{4})$/)
+  const name = match?.[1]?.toLowerCase() ?? ''
+  const m = MONTH_NAMES.findIndex((n) => n.toLowerCase().startsWith(name) && name.length >= 3)
+  if (!match || m < 0) {
+    throw new Error(`Unrecognised date label: "${label}" (expected "Month YYYY", "Month D, YYYY" or "Present")`)
+  }
+  return new Date(parseInt(match[2]!, 10), m, 1)
 }
 
 type Interval = [start: Date, end: Date]

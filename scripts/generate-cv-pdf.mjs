@@ -1,5 +1,5 @@
 import { createServer } from 'node:http'
-import { writeFileSync, mkdirSync, existsSync } from 'node:fs'
+import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'node:fs'
 import { dirname } from 'node:path'
 import sirv from 'sirv'
 import puppeteer from 'puppeteer'
@@ -13,13 +13,28 @@ const BROWSER_EXECUTABLE =
   process.env.CHROME_PATH ||
   (existsSync('/usr/bin/chromium-browser') ? '/usr/bin/chromium-browser' : undefined)
 const CV_ROLE = 'Senior PHP / Laravel Engineer'
-const KEYWORDS = [
-  'PHP', 'Laravel', 'Laravel Octane', 'Livewire', 'Filament', 'Hypervel',
-  'Python', 'Django', 'Go', 'Vue.js', 'Nuxt', 'JavaScript', 'MySQL',
-  'PostgreSQL', 'Redis', 'Docker', 'Linux', 'Nginx', 'REST API',
-  'Microservices', 'CI/CD', 'PHPUnit', 'Pest', 'AI integration',
-  'Backend Engineer', 'Full-Stack Engineer',
+const ROLE_KEYWORDS = [
+  'Senior Software Engineer', 'Backend Engineer', 'Full-Stack Engineer',
+  'REST API', 'AI integration', 'Agile', 'Scrum',
 ]
+
+function skillKeywords() {
+  const source = readFileSync('app/data/site.ts', 'utf8')
+  const start = source.indexOf('export const skills: Skill[] = [')
+  const end = source.indexOf('\n]', start)
+  if (start < 0 || end < 0) {
+    throw new Error('Could not locate the skills array in app/data/site.ts')
+  }
+  const titles = [...source.slice(start, end).matchAll(/title: '([^']+)'/g)].map((m) => m[1])
+  if (titles.length === 0) throw new Error('No skill titles found in app/data/site.ts')
+
+  return titles.flatMap((title) => {
+    const paren = title.match(/^(.+?)\s*\(([^)]+)\)$/)
+    return paren ? [paren[1], paren[2]] : [title]
+  })
+}
+
+const KEYWORDS = [...new Set([...skillKeywords(), ...ROLE_KEYWORDS])]
 
 if (!existsSync(BUILD_DIR)) {
   console.error(`[pdf] ${BUILD_DIR} not found. Run \`npm run generate\` first.`)
