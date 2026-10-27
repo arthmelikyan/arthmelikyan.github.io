@@ -69,19 +69,20 @@ export default defineNuxtConfig({
     url: SITE_URL,
     name: 'Arthur Melikyan',
     description:
-      'Senior PHP/Laravel fullstack developer — portfolio, experience and CV of Arthur Melikyan.',
+      'Arthur Melikyan, senior PHP and Laravel engineer in Gyumri, Armenia. REST APIs, AI integrations and Vue.js. Open to remote roles and relocation.',
     defaultLocale: 'en',
   },
 
   sitemap: {
-    autoLastmod: true,
+    autoLastmod: false,
     xsl: false,
     discoverImages: false,
     exclude: ['/cv-print', '/cover-letter-print'],
+    urls: ['/Arthur_Melikyan_Senior_PHP_Laravel_Engineer_CV.pdf'],
   },
 
   robots: {
-    blockNonSeoBots: true,
+    blockNonSeoBots: false,
   },
 
   image: {

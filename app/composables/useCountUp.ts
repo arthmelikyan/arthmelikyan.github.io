@@ -1,5 +1,5 @@
 export function useCountUp(target: number, duration = 1400) {
-  const value = ref(0)
+  const value = ref(target)
   const el = ref<HTMLElement | null>(null)
 
   onMounted(() => {

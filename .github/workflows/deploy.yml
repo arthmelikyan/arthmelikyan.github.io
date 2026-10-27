@@ -41,6 +41,9 @@ jobs:
         env:
           NUXT_PUBLIC_SITE_URL: https://arthmelikyan.github.io
 
+      - name: Check generated search metadata and content
+        run: npm run check:seo
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

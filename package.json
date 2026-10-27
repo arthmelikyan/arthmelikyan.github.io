@@ -9,7 +9,8 @@
     "generate:pdf": "node scripts/generate-cv-pdf.mjs",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "check:seo": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.11.0",

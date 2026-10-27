@@ -65,7 +65,7 @@ export function useExperience(companies: readonly Company[]) {
     const m = months.value
     const yPart = `${y} year${y === 1 ? '' : 's'}`
     const mPart = m ? ` & ${m} month${m === 1 ? '' : 's'}` : ''
-    return `${yPart}${mPart} of hardworking`
+    return `${yPart}${mPart} of professional experience`
   })
 
   return { totalMonths, years, months, phrase }

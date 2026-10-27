@@ -41,6 +41,10 @@ const { text, cursor } = useTyping({
         {{ profile.tagline }}
       </p>
 
+      <p class="mt-4 text-sm sm:text-base text-fg-muted">
+        {{ profile.location }} <span class="mx-2" aria-hidden="true">·</span> {{ profile.availability }}
+      </p>
+
       <div
         class="mt-10 flex flex-wrap items-center justify-center gap-3 animate-fade-up"
         style="animation-delay: 200ms"
@@ -65,6 +69,12 @@ const { text, cursor } = useTyping({
             <polyline points="12 5 19 12 12 19" />
           </svg>
         </a>
+        <NuxtLink
+          to="/cv"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-surface-2 text-fg font-semibold border border-border hover:border-accent/50 transition-colors"
+        >
+          Read my CV
+        </NuxtLink>
         <a
           href="#contact"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-surface-2 text-fg font-semibold border border-border hover:border-accent/50 hover:bg-surface-3 transition-all"

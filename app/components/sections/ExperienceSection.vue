@@ -17,7 +17,7 @@ const { phrase } = useExperience(companies)
       <SectionHeading
         eyebrow="Career"
         :title="phrase"
-        subtitle="A track record of shipping production-grade software across teams of every size."
+        subtitle="Backend and full-stack engineering roles since 2018. See my CV for responsibilities, results and the stack used in each role."
       />
 
       <ul

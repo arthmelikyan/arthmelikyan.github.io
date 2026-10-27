@@ -17,6 +17,7 @@ export const profile = {
   email: 'arthmelikyan@gmail.com',
   phones: ['+374 94 112 182'],
   cvPdf: '/Arthur_Melikyan_Senior_PHP_Laravel_Engineer_CV.pdf',
+  image: '/img/arthur-melikyan.jpg',
   bio: [
     'Senior PHP/Laravel engineer with {years}+ years building AI integrations, fast APIs and high-performance backends for consumer products.',
     'I write clean, secure, efficient code and tune the full stack — Linux, Nginx, Redis — when performance matters.',

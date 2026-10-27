@@ -12,7 +12,7 @@ const visibleSkills = skills.filter((s) => !s.cvOnly)
       <SectionHeading
         eyebrow="What I work with"
         title="Skills"
-        subtitle="A blend of frontend, backend, infra and DB tooling I reach for daily — and learning never really stops."
+        subtitle="PHP and Laravel for backend development; Vue.js, Nuxt and Livewire for interfaces; PostgreSQL, MySQL and Redis for data and caching."
       />
 
       <ul

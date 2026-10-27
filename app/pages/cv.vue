@@ -9,20 +9,36 @@ import {
   socials,
 } from '~/data/site'
 import { useProfileBio } from '~/composables/useProfileBio'
+import { profilePageSchema, siteUrl, socialImage } from '~/utils/profileSeo'
+
+const title = `${profile.name} CV — Senior PHP & Laravel Engineer`
+const description = 'Arthur Melikyan’s CV: PHP, Laravel, Vue.js, REST APIs, AI integrations, PostgreSQL and Redis. Experience at Hyperspace.ai, Lovel AI and Elite Dev Squad.'
 
 useSeoMeta({
-  title: `CV — ${profile.name}`,
-  description: `Detailed CV for ${profile.name}: experience, technical skills, education, languages and hobbies.`,
-  ogTitle: `${profile.name} — CV`,
-  ogDescription: profile.role,
-  ogImage: '/img/fbcover.jpg',
-  twitterCard: 'summary_large_image',
-  robots: 'index, follow',
+  title,
+  description,
+  author: profile.name,
+  ogTitle: title,
+  ogDescription: description,
+  ogType: 'profile',
+  ogUrl: `${siteUrl}/cv`,
+  ogSiteName: profile.name,
+  ogImage: socialImage,
+  ogImageWidth: 480,
+  ogImageHeight: 640,
+  ogImageAlt: `${profile.name} — ${profile.role}`,
+  twitterCard: 'summary',
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: socialImage,
+  twitterImageAlt: `${profile.name} — ${profile.role}`,
+  robots: 'index, follow, max-image-preview:large',
 })
 
 useHead({
-  titleTemplate: (title) => title ?? profile.name,
-  link: [{ rel: 'canonical', href: 'https://arthmelikyan.github.io/cv' }],
+  titleTemplate: (value) => value ?? profile.name,
+  link: [{ rel: 'canonical', href: `${siteUrl}/cv` }],
+  script: [{ type: 'application/ld+json', innerHTML: JSON.stringify(profilePageSchema('/cv', title, description)) }],
 })
 
 const { bio } = useProfileBio()
@@ -53,7 +69,7 @@ const telegram = computed(
     <div class="container-page max-w-4xl">
       <header class="text-center mb-12 print:mb-6">
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
-          {{ profile.name }}
+          {{ profile.name }} — CV
         </h1>
         <p class="mt-2 text-lg text-fg-muted">{{ profile.role }}</p>
         <p class="mt-1 text-sm font-semibold text-accent">{{ profile.availability }}</p>
@@ -99,7 +115,7 @@ const telegram = computed(
       </header>
 
       <section class="mb-10">
-        <h2 class="text-xl font-bold text-accent mb-4">Objective</h2>
+        <h2 class="text-xl font-bold text-accent mb-4">Professional summary</h2>
         <p
           v-for="(line, i) in bio"
           :key="i"

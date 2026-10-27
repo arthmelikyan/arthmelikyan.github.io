@@ -62,6 +62,8 @@ defineEmits<{ open: [] }>()
         <p class="mt-1 text-sm text-fg-muted">
           {{ portfolio.releaseDate }}
         </p>
+        <p class="mt-3 text-sm text-fg-muted leading-relaxed">{{ portfolio.description }}</p>
+        <p class="mt-3 text-xs text-fg-muted leading-relaxed">{{ portfolio.technologies.join(' · ') }}</p>
       </div>
     </button>
   </article>
