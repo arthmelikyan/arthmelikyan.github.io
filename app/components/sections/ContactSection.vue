@@ -36,9 +36,9 @@ import SocialLinkComponent from '~/components/ui/SocialLink.vue'
           class="lg:col-span-1 p-6 md:p-8 rounded-2xl bg-surface-2/60 border border-border"
         >
           <p class="text-xs font-semibold uppercase tracking-wider text-fg-dim">
-            Where I am
+            Availability
           </p>
-          <p class="mt-2 text-lg font-semibold text-fg">{{ profile.location }}</p>
+          <p class="mt-2 text-lg font-semibold text-fg">{{ profile.availability }}</p>
 
           <div class="mt-6">
             <p class="text-xs font-semibold uppercase tracking-wider text-fg-dim">

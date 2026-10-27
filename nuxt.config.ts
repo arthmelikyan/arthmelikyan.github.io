@@ -69,7 +69,7 @@ export default defineNuxtConfig({
     url: SITE_URL,
     name: 'Arthur Melikyan',
     description:
-      'Arthur Melikyan, senior PHP and Laravel engineer in Gyumri, Armenia. REST APIs, AI integrations and Vue.js. Open to remote roles and relocation.',
+      'Arthur Melikyan, senior PHP and Laravel engineer. REST APIs, AI integrations and Vue.js. Open to remote roles and relocation.',
     defaultLocale: 'en',
   },
 

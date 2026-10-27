@@ -35,21 +35,28 @@ for (const [file, path] of [['index.html', '/'], ['cv/index.html', '/cv']]) {
   const page = nodes.find((node) => node['@type'] === 'ProfilePage')
   assert.equal(person?.['@id'], `${origin}/#person`)
   assert.equal(page?.mainEntity['@id'], person['@id'])
-  assert.equal(person.address.addressLocality, 'Gyumri')
-  assert.equal(person.address.addressCountry, 'AM')
+  if (path === '/cv') {
+    assert.equal(person.address.addressLocality, 'Gyumri')
+    assert.equal(person.address.addressCountry, 'AM')
+  } else {
+    assert.equal(person.address, undefined)
+    assert.doesNotMatch(meta(html, 'description')[0], /Gyumri|Armenia/)
+  }
   assert.equal(person.worksFor, undefined, 'Do not imply a previous job is current')
   assert.equal(person.alumniOf, undefined, 'Do not describe former employers as schools')
   assert.equal(person.subjectOf.url, `${origin}${pdf}`)
   const body = html.split('<body')[1].replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
-  for (const term of ['Hyperspace.ai', 'Lovel AI', 'PostgreSQL', 'Redis', 'Gyumri', 'remote']) {
+  for (const term of ['Hyperspace.ai', 'Lovel AI', 'PostgreSQL', 'Redis', 'remote']) {
     assert.ok(body.includes(term), `${path}: readable ${term}`)
   }
   assert.ok(body.includes(`href="${pdf}"`), `${path}: PDF link`)
 }
 
 const home = read('index.html')
+assert.doesNotMatch(home, /Gyumri, Armenia/)
 assert.match(home, /href="\/cv"/)
 const cv = read('cv/index.html')
+assert.match(cv, /Gyumri, Armenia/)
 assert.match(cv, /4–5×/)
 assert.match(cv, /12\+/)
 assert.doesNotMatch(home, />0<span class="text-3xl">/, 'Static career counts must not start at zero')

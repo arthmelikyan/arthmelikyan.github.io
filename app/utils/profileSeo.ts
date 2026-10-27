@@ -36,14 +36,16 @@ export function profilePageSchema(path: '/' | '/cv', title: string, description:
         alternateName: 'arthmelikyan',
         url: `${siteUrl}/`,
         jobTitle: profile.role,
-        description: 'Senior PHP and Laravel engineer in Gyumri, Armenia. REST APIs, AI integrations and full-stack development with Vue.js and Nuxt.',
+        description: 'Senior PHP and Laravel engineer. REST APIs, AI integrations and full-stack development with Vue.js and Nuxt.',
         image: profileImage,
         email: `mailto:${profile.email}`,
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Gyumri',
-          addressCountry: 'AM',
-        },
+        ...(path === '/cv' ? {
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Gyumri',
+            addressCountry: 'AM',
+          },
+        } : {}),
         knowsAbout: skills.map((skill) => skill.title),
         knowsLanguage: languages.map((language) => language.name),
         sameAs: socials

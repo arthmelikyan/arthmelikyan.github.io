@@ -7,8 +7,8 @@ import ExperienceSection from '~/components/sections/ExperienceSection.vue'
 import PortfolioSection from '~/components/sections/PortfolioSection.vue'
 import ContactSection from '~/components/sections/ContactSection.vue'
 
-const title = `${profile.name} — Senior PHP & Laravel Engineer in Armenia`
-const description = 'Arthur Melikyan, senior PHP and Laravel engineer in Gyumri, Armenia. REST APIs, AI integrations and Vue.js. Open to remote roles and relocation.'
+const title = `${profile.name} — Senior PHP & Laravel Engineer`
+const description = 'Arthur Melikyan, senior PHP and Laravel engineer. REST APIs, AI integrations and Vue.js. Open to remote roles and relocation.'
 
 useSeoMeta({
   title,

@@ -42,7 +42,7 @@ const { text, cursor } = useTyping({
       </p>
 
       <p class="mt-4 text-sm sm:text-base text-fg-muted">
-        {{ profile.location }} <span class="mx-2" aria-hidden="true">·</span> {{ profile.availability }}
+        {{ profile.availability }}
       </p>
 
       <div
