@@ -2,6 +2,7 @@
 import {
   cvCertifications,
   cvExperience,
+  cvSummary,
   education,
   languages,
   profile,
@@ -12,7 +13,7 @@ import { useProfileBio } from '~/composables/useProfileBio'
 import { profilePageSchema, siteUrl, socialImage } from '~/utils/profileSeo'
 
 const title = `${profile.name} CV — Senior PHP & Laravel Engineer`
-const description = 'Arthur Melikyan’s CV: PHP, Laravel, Vue.js, REST APIs, AI integrations, PostgreSQL and Redis. Experience at Hyperspace.ai, Lovel AI and Elite Dev Squad.'
+const description = 'Arthur Melikyan’s CV: PHP, Laravel, Vue.js, REST APIs, AI integrations, PostgreSQL and Redis. Experience at Hyperspace.ai and Elite Dev Squad, including an affiliated Lovel.ai assignment.'
 
 useSeoMeta({
   title,
@@ -41,7 +42,8 @@ useHead({
   script: [{ type: 'application/ld+json', innerHTML: JSON.stringify(profilePageSchema('/cv', title, description)) }],
 })
 
-const { bio } = useProfileBio()
+const { years } = useProfileBio()
+const summary = computed(() => cvSummary.replace('{years}', String(years.value)))
 
 const skillGroups = [
   { label: 'Backend', group: 'backend' as const },
@@ -116,18 +118,7 @@ const telegram = computed(
 
       <section class="mb-10">
         <h2 class="text-xl font-bold text-accent mb-4">Professional summary</h2>
-        <p
-          v-for="(line, i) in bio"
-          :key="i"
-          class="text-fg leading-relaxed mb-3"
-        >
-          {{ line }}
-        </p>
-        <ul class="mt-4 space-y-2 list-disc pl-6 marker:text-accent text-fg-muted">
-          <li v-for="point in profile.highlights" :key="point">
-            {{ point }}
-          </li>
-        </ul>
+        <p class="text-fg leading-relaxed">{{ summary }}</p>
       </section>
 
       <section class="mb-10">

@@ -77,6 +77,8 @@ export const skills: Skill[] = [
   { id: 'unit-testing', title: 'Unit testing', group: 'testing', cvOnly: true },
   { id: 'tdd', title: 'TDD', group: 'testing', cvOnly: true },
   { id: 'system-design', title: 'System design', group: 'architecture', cvOnly: true },
+  { id: 'solid', title: 'SOLID principles', group: 'architecture', cvOnly: true },
+  { id: 'agile', title: 'Agile/Scrum', group: 'architecture', cvOnly: true },
   { id: 'microservices', title: 'Microservices', group: 'architecture', cvOnly: true },
   { id: 'rest-api', title: 'REST API design', group: 'architecture', cvOnly: true },
   { id: 'event-driven', title: 'Event-driven architecture (NATS)', group: 'architecture', cvOnly: true },
@@ -90,7 +92,7 @@ export const companies: Company[] = [
     logo: '/img/companies/brain_fors.svg',
     dateFrom: 'November 2018',
     dateTo: 'March 2021',
-    role: 'Laravel Developer',
+    role: 'PHP/Laravel Full-Stack Developer',
   },
   {
     id: 'aist-global',
@@ -114,16 +116,7 @@ export const companies: Company[] = [
     logo: '/img/companies/ellite.svg',
     dateFrom: 'November 2021',
     dateTo: 'February 2024',
-    role: 'Laravel Full-Stack Developer',
-  },
-  {
-    id: 'lovel-ai',
-    name: 'Lovel AI',
-    logo: '/img/companies/lovel_ai.png',
-    dateFrom: 'January 2026',
-    dateTo: 'April 2026',
-    role: 'Backend Engineer',
-    note: 'Concurrent fixed-term assignment at a company affiliated with Hyperspace.ai. My Hyperspace.ai role continued uninterrupted throughout, so these dates overlap by design.',
+    role: 'Senior Laravel Full-Stack Developer',
   },
   {
     id: 'hyperspace',
@@ -132,6 +125,7 @@ export const companies: Company[] = [
     dateFrom: 'April 2024',
     dateTo: 'July 2026',
     role: 'Senior Full-Stack Engineer (PHP/Laravel)',
+    note: 'Included a concurrent Backend Engineer assignment at affiliated Lovel.ai (January - April 2026), working across 10+ Hypervel microservices, payments, Redis caching and NATS messaging.',
   },
 ]
 
@@ -366,6 +360,8 @@ export const socials: SocialLink[] = [
   },
 ]
 
+export const cvSummary = 'Senior PHP/Laravel engineer with {years}+ years of experience building REST APIs, AI integrations and backends for consumer products using PostgreSQL, MySQL and Redis. Experience includes PCI-aware payment flows, automated testing, and Linux server setup and tuning with Nginx, Apache, Redis and queue workers.'
+
 export const cvExperience: CvExperience[] = [
   {
     company: 'Hyperspace.ai',
@@ -373,43 +369,29 @@ export const cvExperience: CvExperience[] = [
     location: 'Remote',
     period: 'Apr 2024 - Jul 2026',
     achievements: [
-      'Led the AI-integration layer of a generative-AI product — 12+ external models (OpenAI, Anthropic Claude, Google Gemini, Mistral, Midjourney, Leonardo, fal.ai, ElevenLabs, Suno and more) behind one interface, so the rest of the product did not need to know which model ran.',
-      'Built and maintained chat and content-generation flows across text, image, audio and voice — streaming responses, plan-based quotas, multi-model selection, and a migration of the old chat schema to a new conversations model.',
-      'Cut API response times 4–5× through query tuning, code refactoring, smaller payloads, caching and Laravel Octane, and built new API layers for cleaner data flow to web and mobile.',
-      'Scaled SEO for a large-page product (sitemap splitting, feeds, structured data) and kept the platform current with regular PHP/Laravel upgrades and queue tuning.',
+      'Led integration of 12+ AI models behind a unified interface that decoupled product features from model providers, including OpenAI, Anthropic Claude, Google Gemini, Mistral, Midjourney, Leonardo, fal.ai, ElevenLabs and Suno.',
+      'Built and maintained chat and text, image, audio and voice generation with streaming responses, plan-based quotas and model selection; migrated legacy chat data to a new conversations schema.',
+      'Made API responses 4-5 times faster through query tuning, refactoring, smaller payloads, caching and Laravel Octane; built API layers for web and mobile clients.',
+      'Lovel.ai (Jan 2026 - Apr 2026): concurrent, fixed-term Backend Engineer assignment at an affiliated company across 10+ Hypervel microservices. Delivered features and fixed live payment issues involving refunds, webhook retries and idempotency; reduced repeated queries with Redis caching; built REST APIs for internal services and the client app, with NATS event messaging.',
+      'Scaled SEO for a product with a large number of pages using sitemap splitting, feeds and structured data; upgraded PHP/Laravel and tuned queues.',
     ],
     technologies:
-      'PHP/Laravel, Laravel Octane, Eloquent ORM, Vue, Nuxt, PostgreSQL, Redis, Algolia, Laravel Horizon, WebSockets, Docker, Linux, Nginx, CI/CD, PM2, PHPUnit, unit testing.',
-  },
-  {
-    company: 'Lovel AI',
-    role: 'Backend Engineer',
-    location: 'Remote',
-    period: 'Jan 2026 - Apr 2026',
-    context:
-      'Concurrent fixed-term assignment at a company affiliated with Hyperspace.ai; the Hyperspace.ai role continued uninterrupted throughout.',
-    achievements: [
-      'Built new features and fixed high-impact bugs across a Hypervel stack of 10+ microservices.',
-      'Fixed payment-flow issues — refunds, webhook retries and idempotency — affecting live transactions.',
-      'Improved caching and Redis usage, cutting repeated database calls on hot read paths.',
-      'Built REST API endpoints for internal services and the client app, with services talking over a NATS message broker for low-latency events.',
-    ],
-    technologies:
-      'PHP/Hypervel, PostgreSQL, Redis, NATS, microservices, REST API design, payment-system integration, caching strategy, Docker, Linux, Nginx.',
+      'PHP, Laravel, Laravel Octane, Hypervel, Vue.js, Nuxt, PostgreSQL, Redis, Algolia, Laravel Horizon, WebSockets, NATS, Docker, Linux, Nginx, PM2, CI/CD, PHPUnit.',
   },
   {
     company: 'Elite Dev Squad',
-    role: 'Laravel Full-Stack Developer',
+    role: 'Senior Laravel Full-Stack Developer',
     location: 'Yerevan, Armenia (Hybrid)',
     period: 'Nov 2021 - Feb 2024',
     achievements: [
-      'Delivered company-management software, APIs, online stores, web scrapers and dashboards — including rebuilding a buggy legacy codebase into a scalable Laravel app.',
-      'Led a complex company-management app over a large database of Irish businesses — task management with recurring jobs, document and event management, and automated/manual time tracking with charts.',
-      'Improved performance — lower memory use through efficient queries, dynamic loading and bug fixes.',
-      'Reviewed teammates’ code for quality, and automated tests and deploys with CI/CD and GitHub Actions — 50% faster deploys.',
+      'Delivered business-management software, APIs, online stores, web scrapers and dashboards; rebuilt a legacy codebase as a scalable Laravel application.',
+      'Led development of a management application backed by a large database of Irish businesses, with recurring tasks, documents, events and automated/manual time tracking with charts.',
+      'Implemented large-file handling, Microsoft file-viewing integration and external API integrations.',
+      'Reduced memory use through query optimization, dynamic loading and bug fixes.',
+      'Reviewed code and automated tests and deployments with GitHub Actions, achieving 50% faster deployments.',
     ],
     technologies:
-      'PHP/Laravel, Livewire, MySQL, PostgreSQL, Clickhouse, Redis, JavaScript, Alpine.js, jQuery, CRON job scheduling, queued jobs, external API integration, large-file handling, Microsoft files viewing integration, online payment integrations, REST API integration, Docker, Linux, Nginx, PHPUnit, Pest, unit testing, code coverage analysis.',
+      'PHP, Laravel, Livewire, MySQL, PostgreSQL, ClickHouse, Redis, JavaScript, Alpine.js, queues, CRON scheduling, payment integrations, REST APIs, Docker, Linux, Nginx, GitHub Actions, PHPUnit, Pest, code coverage analysis.',
   },
   {
     company: 'Code Alliance',
@@ -417,10 +399,10 @@ export const cvExperience: CvExperience[] = [
     location: 'Yerevan, Armenia',
     period: 'Aug 2021 - Nov 2021',
     achievements: [
-      'Built and ran CRM systems with easy dashboards and secure data, and automated large-scale bank transaction processing via queued jobs and memory tuning.',
+      'Built CRM systems and dashboards; automated large-scale bank transaction processing with queued jobs and memory tuning.',
     ],
     technologies:
-      'PHP/Laravel, MySQL, Redis, JavaScript, CSS, bank-transaction APIs, queued jobs, optimization, secure data management, Linux, Nginx.',
+      'PHP, Laravel, MySQL, Redis, JavaScript, CSS, bank-transaction APIs, queues, Linux, Nginx.',
   },
   {
     company: 'Aist Global',
@@ -428,15 +410,15 @@ export const cvExperience: CvExperience[] = [
     location: 'Yerevan, Armenia',
     period: 'Mar 2021 - Aug 2021',
     achievements: [
-      'Developed a Udemy-like online-school platform — course uploads, online meetings, student interactions — and added secure payments.',
+      'Developed an online learning platform with course uploads, online meetings, student interactions and payment integration.',
       'Built a Lottie Animation Marketplace with a dashboard, REST APIs and docs, and published a custom quiz package on Packagist.',
     ],
     technologies:
-      'PHP/Laravel, JavaScript, multi-tenant applications, Vue.js, jQuery, MySQL, Redis, package development, payment-system integration, front-end development, Lottie animation integration, Linux, Nginx.',
+      'PHP, Laravel, JavaScript, Vue.js, jQuery, MySQL, Redis, multi-tenancy, Composer packages, payment integrations, Linux, Nginx.',
   },
   {
     company: 'Brain Fors',
-    role: 'Laravel Developer',
+    role: 'PHP/Laravel Full-Stack Developer',
     location: 'Gyumri, Armenia',
     period: 'Nov 2018 - Mar 2021',
     achievements: [
@@ -444,14 +426,14 @@ export const cvExperience: CvExperience[] = [
       'Added real-time chat, strong security for data integrity and privacy, and REST APIs for mobile apps and online shops.',
     ],
     technologies:
-      'PHP/Laravel, MySQL, Redis, JavaScript, Vue.js, jQuery, Pusher.js, REST API development, external API integrations, real-time communication protocols, data visualization, security best practices, Linux, Nginx.',
+      'PHP, Laravel, MySQL, Redis, JavaScript, Vue.js, jQuery, Pusher.js, REST APIs, Riot API, Valve API, data visualization, Linux, Nginx.',
   },
 ]
 
 export const education = [
   {
     period: '2016 - 2017',
-    name: 'Gyumri Information Technologies Center (GITC) — Web Development',
+    name: 'Gyumri Information Technologies Center (GITC) — Computer Science',
   },
   { period: '2009 - 2012', name: 'Gyumri State Technical College' },
 ] as const

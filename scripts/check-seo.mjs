@@ -46,7 +46,7 @@ for (const [file, path] of [['index.html', '/'], ['cv/index.html', '/cv']]) {
   assert.equal(person.alumniOf, undefined, 'Do not describe former employers as schools')
   assert.equal(person.subjectOf.url, `${origin}${pdf}`)
   const body = html.split('<body')[1].replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
-  for (const term of ['Hyperspace.ai', 'Lovel AI', 'PostgreSQL', 'Redis', 'remote']) {
+  for (const term of ['Hyperspace.ai', 'Lovel.ai', 'PostgreSQL', 'Redis', 'remote']) {
     assert.ok(body.includes(term), `${path}: readable ${term}`)
   }
   assert.ok(body.includes(`href="${pdf}"`), `${path}: PDF link`)
@@ -57,7 +57,7 @@ assert.doesNotMatch(home, /Gyumri, Armenia/)
 assert.match(home, /href="\/cv"/)
 const cv = read('cv/index.html')
 assert.match(cv, /Gyumri, Armenia/)
-assert.match(cv, /4–5×/)
+assert.match(cv, /4-5 times faster/)
 assert.match(cv, /12\+/)
 assert.doesNotMatch(home, />0<span class="text-3xl">/, 'Static career counts must not start at zero')
 

@@ -10,7 +10,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "typecheck": "nuxt typecheck",
-    "check:seo": "node scripts/check-seo.mjs"
+    "check:seo": "node scripts/check-seo.mjs",
+    "check:cv": "node scripts/check-cv-pdf.mjs"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.11.0",
