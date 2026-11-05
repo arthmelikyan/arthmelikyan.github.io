@@ -124,6 +124,7 @@ const groupedSkills = skillGroups
       <p v-for="edu in education" :key="edu.period" class="line">
         <span class="line-label">{{ edu.name }}</span
         >, {{ edu.period }}
+        <span v-if="edu.details" class="education-details">{{ edu.details }}</span>
       </p>
     </section>
 
@@ -225,7 +226,7 @@ const groupedSkills = skillGroups
 
 /* ---------- Sections ---------- */
 .section {
-  margin-top: 8pt;
+  margin-top: 6pt;
 }
 .section h2 {
   margin: 0 0 7pt;
@@ -316,6 +317,10 @@ const groupedSkills = skillGroups
 }
 .line:last-child {
   margin-bottom: 0;
+}
+.education-details {
+  display: block;
+  font-size: 9.5pt;
 }
 .line-label {
   font-weight: 700;

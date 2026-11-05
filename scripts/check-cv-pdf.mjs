@@ -13,7 +13,7 @@ for (const mode of [[], ['-layout'], ['-raw']]) {
   assert(!text.includes('\uFFFD'), 'PDF contains replacement characters')
   for (const value of ['Arthur Melikyan', 'arthmelikyan@gmail.com', '+374 94 112 182',
     'Senior PHP / Laravel Engineer', 'Lovel.ai (Jan 2026 - Apr 2026)',
-    'Apr 2024 - Jul 2026', '4-5 times faster', 'PostgreSQL', 'PHPUnit',
+    'Apr 2024 - Jul 2026', 'selected API endpoints more than 20 times faster', 'PostgreSQL', 'PHPUnit',
     'TECHNICAL SKILLS', 'EDUCATION', 'CERTIFICATIONS', 'LANGUAGES']) {
     assert(text.includes(value), `Missing or garbled PDF text: ${value}`)
   }

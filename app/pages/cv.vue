@@ -225,7 +225,10 @@ const telegram = computed(
             :key="edu.period"
             class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 p-4 rounded-xl bg-surface-2/60 border border-border"
           >
-            <span class="text-fg">{{ edu.name }}</span>
+            <div>
+              <p class="text-fg">{{ edu.name }}</p>
+              <p v-if="edu.details" class="mt-1 text-sm text-fg-muted">{{ edu.details }}</p>
+            </div>
             <span class="text-sm text-fg-muted shrink-0">{{ edu.period }}</span>
           </li>
         </ol>

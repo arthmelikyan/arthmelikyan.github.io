@@ -38,10 +38,10 @@ const github = socials.find((social) => social.id === 'github')
         integrations grow.
       </p>
       <p>
-        Most recently at Hyperspace.ai, I improved API response times by 4-5x
-        through SQL profiling, Laravel Octane, Redis, Nginx, and queue-worker
-        tuning. I also led a unified integration layer for 12+ generative-AI
-        providers, giving the product a consistent interface across text, image,
+        Most recently at Hyperspace.ai, I made selected API endpoints more than
+        20 times faster through query tuning, refactoring, smaller payloads,
+        caching and Laravel Octane. I also led development of 12+ AI integrations through one shared
+        interface, supporting the product's text, image,
         audio, and voice capabilities.
       </p>
       <p>

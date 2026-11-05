@@ -23,7 +23,7 @@ export const profile = {
     'I write clean, secure, efficient code and tune the full stack — Linux, Nginx, Redis — when performance matters.',
   ],
   highlights: [
-    'Integrated 12+ AI models (OpenAI, Anthropic, Google Gemini and more) behind one unified interface.',
+    'Built 12+ AI integrations (OpenAI, Anthropic, Google Gemini and more) behind one shared interface.',
     'Built multiple payment integrations with PCI-aware flows.',
     'Set up and tuned Linux servers with Nginx / Apache, Redis and queue workers.',
     'Test-driven development (TDD) and SOLID principles for reliable, maintainable code.',
@@ -360,7 +360,7 @@ export const socials: SocialLink[] = [
   },
 ]
 
-export const cvSummary = 'Senior PHP/Laravel engineer with {years}+ years of experience building REST APIs, AI integrations and backends for consumer products using PostgreSQL, MySQL and Redis. Experience includes PCI-aware payment flows, automated testing, and Linux server setup and tuning with Nginx, Apache, Redis and queue workers.'
+export const cvSummary = 'Senior PHP/Laravel engineer with {years}+ years building web applications, REST APIs and AI integrations. Improved API performance through database tuning and caching. Experienced in PostgreSQL, MySQL, Redis, PCI-aware payments, automated testing, and Linux server setup and tuning with Nginx, Apache and queue workers.'
 
 export const cvExperience: CvExperience[] = [
   {
@@ -369,9 +369,9 @@ export const cvExperience: CvExperience[] = [
     location: 'Remote',
     period: 'Apr 2024 - Jul 2026',
     achievements: [
-      'Led integration of 12+ AI models behind a unified interface that decoupled product features from model providers, including OpenAI, Anthropic Claude, Google Gemini, Mistral, Midjourney, Leonardo, fal.ai, ElevenLabs and Suno.',
-      'Built and maintained chat and text, image, audio and voice generation with streaming responses, plan-based quotas and model selection; migrated legacy chat data to a new conversations schema.',
-      'Made API responses 4-5 times faster through query tuning, refactoring, smaller payloads, caching and Laravel Octane; built API layers for web and mobile clients.',
+      'Made selected API endpoints more than 20 times faster through query tuning, refactoring, smaller payloads, caching and Laravel Octane; built API layers for web and mobile clients.',
+      'Led development of 12+ AI integrations behind a shared interface, allowing product features to use different AI services. Integrations included OpenAI, Anthropic Claude, Google Gemini, Mistral, Midjourney, Leonardo, fal.ai, ElevenLabs and Suno.',
+      'Built and maintained chat and tools for generating text, images, audio and voice, with streaming responses, usage limits by subscription plan and model selection. Migrated existing chat data to a new conversation structure.',
       'Lovel.ai (Jan 2026 - Apr 2026): concurrent, fixed-term Backend Engineer assignment at an affiliated company across 10+ Hypervel microservices. Delivered features and fixed live payment issues involving refunds, webhook retries and idempotency; reduced repeated queries with Redis caching; built REST APIs for internal services and the client app, with NATS event messaging.',
       'Scaled SEO for a product with a large number of pages using sitemap splitting, feeds and structured data; upgraded PHP/Laravel and tuned queues.',
     ],
@@ -385,10 +385,10 @@ export const cvExperience: CvExperience[] = [
     period: 'Nov 2021 - Feb 2024',
     achievements: [
       'Delivered business-management software, APIs, online stores, web scrapers and dashboards; rebuilt a legacy codebase as a scalable Laravel application.',
-      'Led development of a management application backed by a large database of Irish businesses, with recurring tasks, documents, events and automated/manual time tracking with charts.',
+      'Led development of a management application using a large database of Irish businesses. Features included recurring tasks, document and event management, and automatic and manual time tracking with charts.',
       'Implemented large-file handling, Microsoft file-viewing integration and external API integrations.',
       'Reduced memory use through query optimization, dynamic loading and bug fixes.',
-      'Reviewed code and automated tests and deployments with GitHub Actions, achieving 50% faster deployments.',
+      'Reviewed code and automated tests and deployments with GitHub Actions; optimized CI test runs and Docker workflows.',
     ],
     technologies:
       'PHP, Laravel, Livewire, MySQL, PostgreSQL, ClickHouse, Redis, JavaScript, Alpine.js, queues, CRON scheduling, payment integrations, REST APIs, Docker, Linux, Nginx, GitHub Actions, PHPUnit, Pest, code coverage analysis.',
@@ -411,7 +411,7 @@ export const cvExperience: CvExperience[] = [
     period: 'Mar 2021 - Aug 2021',
     achievements: [
       'Developed an online learning platform with course uploads, online meetings, student interactions and payment integration.',
-      'Built a Lottie Animation Marketplace with a dashboard, REST APIs and docs, and published a custom quiz package on Packagist.',
+      'Built a Lottie animation marketplace with a dashboard, REST APIs and documentation; published a reusable quiz package on Packagist.',
     ],
     technologies:
       'PHP, Laravel, JavaScript, Vue.js, jQuery, MySQL, Redis, multi-tenancy, Composer packages, payment integrations, Linux, Nginx.',
@@ -430,12 +430,13 @@ export const cvExperience: CvExperience[] = [
   },
 ]
 
-export const education = [
+export const education: readonly { period: string; name: string; details?: string }[] = [
   {
     period: '2016 - 2017',
-    name: 'Gyumri Information Technologies Center (GITC) — Computer Science',
+    name: 'Gyumri Information Technologies Center (GITC) — Web Programmer Certificate',
+    details: 'One-year course: computer science fundamentals, algorithms, backend and frontend development.',
   },
-  { period: '2009 - 2012', name: 'Gyumri State Technical College' },
+  { period: '2009 - 2012', name: 'Gyumri State Technical College — Technician Diploma' },
 ] as const
 
 export const cvCertifications: CvCertification[] = [

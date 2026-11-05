@@ -57,7 +57,7 @@ assert.doesNotMatch(home, /Gyumri, Armenia/)
 assert.match(home, /href="\/cv"/)
 const cv = read('cv/index.html')
 assert.match(cv, /Gyumri, Armenia/)
-assert.match(cv, /4-5 times faster/)
+assert.match(cv, /selected API endpoints more than 20 times faster/)
 assert.match(cv, /12\+/)
 assert.doesNotMatch(home, />0<span class="text-3xl">/, 'Static career counts must not start at zero')
 
